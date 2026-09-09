@@ -7,13 +7,13 @@
 h1{font-size:32px;margin:0 0 6px;line-height:1.15}.sub{font-size:19px;color:#555;margin-bottom:20px}
 .big{font-size:104px;font-weight:800;color:#1f4e9a;line-height:1}.pct{font-size:38px}
 .lab{font-size:21px;color:#333;margin:-4px 0 22px}
-#map{height:420px;border:1px solid #dde5ef;border-radius:6px}
+#map{height:420px;width:100%;min-height:420px;border:1px solid #dde5ef;border-radius:6px}
 .legend{font-size:16px;color:#555;margin:10px 0 24px}
 .dot{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin:0 4px 0 12px}
 h2{font-size:22px;margin:26px 0 8px}
 .note{font-size:15px;color:#666;margin-top:26px;border-top:1px solid #ddd;padding-top:12px;line-height:1.5}</style></head><body>
 <h1>What eight GNSS antennas see above the Cevennes</h1>
-<div class="sub">09 Sep 2026 14:27 UTC &middot; 8 stations live &middot; updated every 15 minutes</div>
+<div class="sub">09 Sep 2026 14:28 UTC &middot; 8 stations live &middot; updated every 15 minutes</div>
 <div class="big">67<span class="pct">th percentile</span></div>
 <div class="lab">state of the boundary layer, compared with everything measured in the last 48 hours</div>
 <div id="map"></div>
@@ -28,6 +28,7 @@ Centipede network, processed in real time on the LUIS cluster with IGS orbit and
 wet tropospheric delay, which changes as the boundary layer organises before convection. This is not a forecast and not a warning:
 official warnings are issued by Meteo-France.</div>
 <script>
+document.addEventListener('DOMContentLoaded',function(){
 var M=[{n:'AIGL',lab:'Mont Aigoual',la:44.1200,lo:3.5800,c:99},
 {n:'MTP2',lab:'Montpellier',la:43.6390,lo:3.8640,c:3},
 {n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:98},
@@ -43,7 +44,9 @@ var M=[{n:'AIGL',lab:'Mont Aigoual',la:44.1200,lo:3.5800,c:99},
 {n:'SLVT',t:[61292.06597,61292.06944,61292.07292,61292.07639,61292.07986,61292.08333,61292.08681,61292.09028,61292.09375,61292.09722,61292.10069,61292.10417,61292.10764,61292.11111,61292.11458,61292.11806,61292.12153],v:[-5.994,-3.613,-1.880,-0.997,-0.623,-0.136,0.448,0.275,0.726,1.629,1.912,1.711,0.153,0.066,0.049,-0.203,0.342]},
 {n:'SAUV',t:[61292.02153,61292.02500,61292.02847,61292.03194,61292.03542,61292.03889,61292.04236,61292.04583,61292.04931,61292.05278,61292.05625,61292.05972,61292.06319,61292.06667,61292.07014,61292.07361,61292.07708,61292.08056,61292.08403,61292.08750,61292.09097,61292.09444,61292.09792,61292.10139,61292.10486,61292.10833,61292.11181,61292.11528,61292.11875,61292.12222],v:[0.016,-0.057,1.275,1.856,1.828,1.766,1.933,1.930,1.776,1.525,1.482,1.043,0.497,0.249,-0.517,-0.822,-0.189,-0.028,-0.832,-1.730,-1.209,-1.013,-0.595,-0.280,-0.053,0.122,0.031,-0.145,-0.774,-0.765]},
 {n:'CUMAS',t:[61292.02153,61292.02500,61292.02847,61292.03194,61292.03542,61292.03889,61292.04236,61292.04583,61292.04931,61292.05278,61292.05625,61292.05972,61292.06319,61292.06667,61292.07014,61292.07361,61292.07708,61292.08056,61292.08403,61292.08750,61292.09097,61292.09444,61292.09792,61292.10139],v:[0.961,0.296,-0.311,0.270,1.363,1.760,1.279,0.342,-0.474,-0.020,0.335,0.428,0.134,-0.018,-1.112,-2.449,-2.212,-2.149,-1.634,-2.017,-2.178,-1.644,-0.026,0.422]}];
-var map=L.map('map').setView([44.0,3.9],8);
+var map=L.map('map',{scrollWheelZoom:false}).setView([44.0,3.9],8);
+setTimeout(function(){map.invalidateSize();},400);
+window.addEventListener('load',function(){map.invalidateSize();});
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:12,attribution:'&copy; OpenStreetMap'}).addTo(map);
 M.forEach(function(m){var col=m.c<75?'#1f4e9a':(m.c<90?'#ff8c1a':'#c0392b');
  L.circleMarker([m.la,m.lo],{radius:11,color:'#fff',weight:2,fillColor:col,fillOpacity:0.95}).addTo(map)
@@ -57,4 +60,5 @@ x.strokeStyle='#1f4e9a';x.lineWidth=1.6;x.globalAlpha=0.6;
 S.forEach(function(s){x.beginPath();s.t.forEach(function(tt,i){
  var px=20+820*(tt-t0)/(t1-t0||1), py=165-140*(s.v[i]-lo)/((hi-lo)||1);
  i?x.lineTo(px,py):x.moveTo(px,py);});x.stroke();});
+});
 </script></body></html>
