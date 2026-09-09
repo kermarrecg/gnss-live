@@ -16,9 +16,9 @@ canvas{width:100%;height:auto;display:block;margin-bottom:6px}
 .guide p{margin:8px 0}
 .note{font-size:15px;color:#666;margin-top:28px;border-top:1px solid #ddd;padding-top:12px;line-height:1.55}</style></head><body>
 <h1>What eight low-cost GNSS receivers see above the Cevennes</h1>
-<div class="sub">09 Sep 2026 17:54 UTC &middot; 8 stations live &middot; updated every 15 minutes</div>
+<div class="sub">09 Sep 2026 17:56 UTC &middot; 8 stations live &middot; updated every 15 minutes</div>
 <div class="big">17<span class="pct">th percentile</span></div>
-<div class="lab">how unusual the atmosphere is right now, compared with the last two days</div>
+<div class="lab">calmer than 83% of the last two days</div>
 <div id="map"></div>
 <div class="legend">Each marker is a receiver.
 <span class="dot" style="background:#1f4e9a"></span>ordinary
@@ -29,8 +29,8 @@ canvas{width:100%;height:auto;display:block;margin-bottom:6px}
 <h2>How to read this</h2>
 <div class="guide">
 <p><b>The big number</b> tells you how unusual the atmosphere above the cluster is right now, compared with everything measured in the
-last two days. 50th percentile is an ordinary moment. Above the 90th, the boundary layer is in a state it rarely reaches.</p>
-<p><b>What we look for</b> before convection: the structures of water vapour <i>stretch out</i> while the fluctuations <i>get stronger</i>.
+last two days. 50 means a completely ordinary moment. 90 means the air is in a state it reaches only a few times a day. Below 20, it is unusually quiet.</p>
+<p><b>What we look for</b> before convection: the patches of moist air <i>grow bigger</i> while the signal <i>trembles more</i>.
 Both panels rising together is the signature we documented on five networks and four continents. One panel alone means little.</p>
 <p><b>What it is not.</b> A high number does not mean it will rain here, and a low number does not mean it will not. This measures the
 state of the air, not the trigger. Storms need something to set them off, and that part happens at scales these antennas cannot see.</p>
@@ -42,7 +42,7 @@ state of the air, not the trigger. Storms need something to set them off, and th
 <canvas id="c3" width="880" height="95"></canvas>
 <div class="note">Research experiment by Gael Kermarrec (Leibniz University Hannover). Signals come from low-cost receivers of the
 community-run Centipede network, processed in real time on the LUIS cluster with IGS orbit and clock corrections. We measure how the
-water-vapour delay fluctuates: the size of its structures and the strength of its fluctuations change as the boundary layer organises
+water-vapour delay fluctuates: the size of the moist patches and how much the signal trembles change as the boundary layer organises
 before convection. This is not a forecast and not a warning; official warnings are issued by Meteo-France.</div>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -98,7 +98,7 @@ function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) r
  g.forEach(function(v,i){var px=m+(w-m-10)*i/(g.length-1), py=h-12-(h-26)*(v-l2)/((h2-l2)||1); i?xx.lineTo(px,py):xx.moveTo(px,py);}); xx.stroke();
  xx.fillStyle='#333'; xx.font='600 14px system-ui'; xx.fillText(label,m+6,16);}
 panel('c1','v','#1f4e9a','combined index (higher = more organised, more active)');
-panel('c2','l','#2e8b57','structures getting longer (organisation)');
-panel('c3','s','#8e44ad','fluctuations getting stronger');
+panel('c2','l','#2e8b57','the moist patches grow bigger (organising)');
+panel('c3','s','#8e44ad','the signal trembles more (air being stirred)');
 });
 </script></body></html>
