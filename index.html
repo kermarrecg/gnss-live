@@ -12,9 +12,11 @@ h1{font-size:32px;margin:0 0 6px;line-height:1.15}h2{font-size:21px;margin:30px 
 .legend{font-size:16px;color:#555;margin:10px 0}
 .dot{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin:0 4px 0 14px}
 canvas{width:100%;height:auto;display:block;margin-bottom:6px}
+.guide{font-size:16px;color:#333;line-height:1.6;background:#f7f9fc;border-left:4px solid #1f4e9a;padding:14px 18px;border-radius:4px}
+.guide p{margin:8px 0}
 .note{font-size:15px;color:#666;margin-top:28px;border-top:1px solid #ddd;padding-top:12px;line-height:1.55}</style></head><body>
 <h1>What eight low-cost GNSS receivers see above the Cevennes</h1>
-<div class="sub">09 Sep 2026 15:40 UTC &middot; 8 stations live &middot; updated every 15 minutes</div>
+<div class="sub">09 Sep 2026 15:44 UTC &middot; 8 stations live &middot; updated every 15 minutes</div>
 <div class="big">21<span class="pct">th percentile</span></div>
 <div class="lab">how unusual the atmosphere is right now, compared with the last two days</div>
 <div id="map"></div>
@@ -24,6 +26,16 @@ canvas{width:100%;height:auto;display:block;margin-bottom:6px}
 <span class="dot" style="background:#c0392b"></span>extreme</div>
 <h2>Cluster state over the last hours</h2>
 <canvas id="c" width="880" height="230"></canvas>
+<h2>How to read this</h2>
+<div class="guide">
+<p><b>The big number</b> tells you how unusual the atmosphere above the cluster is right now, compared with everything measured in the
+last two days. 50th percentile is an ordinary moment. Above the 90th, the boundary layer is in a state it rarely reaches.</p>
+<p><b>What we look for</b> before convection: the structures of water vapour <i>stretch out</i> while the fluctuations <i>get stronger</i>.
+Both panels rising together is the signature we documented on five networks and four continents. One panel alone means little.</p>
+<p><b>What it is not.</b> A high number does not mean it will rain here, and a low number does not mean it will not. This measures the
+state of the air, not the trigger. Storms need something to set them off, and that part happens at scales these antennas cannot see.</p>
+<p><b>One station is not a signal.</b> Individual receivers are noisy; only the cluster median (the thick blue line) carries information.</p>
+</div>
 <h2>The three things we measure</h2>
 <canvas id="c1" width="880" height="95"></canvas>
 <canvas id="c2" width="880" height="95"></canvas>
