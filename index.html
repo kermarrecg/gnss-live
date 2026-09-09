@@ -16,7 +16,7 @@ canvas{width:100%;height:auto;display:block;margin-bottom:6px}
 .guide p{margin:8px 0}
 .note{font-size:15px;color:#666;margin-top:28px;border-top:1px solid #ddd;padding-top:12px;line-height:1.55}</style></head><body>
 <h1>What eight low-cost GNSS receivers see above the Cevennes</h1>
-<div class="sub">09 Sep 2026 17:58 UTC &middot; 8 stations live &middot; updated every 15 minutes</div>
+<div class="sub">09 Sep 2026 18:01 UTC &middot; 8 stations live &middot; updated every 15 minutes</div>
 <div class="big">17<span class="pct">th percentile</span></div>
 <div class="lab">calmer than 83% of the last two days</div>
 <div id="map"></div>
@@ -25,7 +25,7 @@ canvas{width:100%;height:auto;display:block;margin-bottom:6px}
 <span class="dot" style="background:#ff8c1a"></span>high
 <span class="dot" style="background:#c0392b"></span>extreme</div>
 <h2>Cluster state over the last hours</h2>
-<canvas id="c" width="880" height="230"></canvas>
+<canvas id="c" width="880" height="300"></canvas>
 <h2>How to read this</h2>
 <div class="guide">
 <p><b>The big number</b> tells you how unusual the atmosphere above the cluster is right now, compared with everything measured in the
@@ -37,9 +37,9 @@ state of the air, not the trigger. Storms need something to set them off, and th
 <p><b>One station is not a signal.</b> Individual receivers are noisy; only the cluster median (the thick blue line) carries information.</p>
 </div>
 <h2>The three things we measure</h2>
-<canvas id="c1" width="880" height="115"></canvas>
-<canvas id="c2" width="880" height="115"></canvas>
-<canvas id="c3" width="880" height="115"></canvas>
+<canvas id="c1" width="880" height="150"></canvas>
+<canvas id="c2" width="880" height="150"></canvas>
+<canvas id="c3" width="880" height="150"></canvas>
 <div class="note">Research experiment by Gael Kermarrec (Leibniz University Hannover). Signals come from low-cost receivers of the
 community-run Centipede network, processed in real time on the LUIS cluster with IGS orbit and clock corrections. We measure how the
 water-vapour delay fluctuates: the size of the moist patches and how much the signal trembles change as the boundary layer organises
@@ -74,29 +74,29 @@ function pick(s,key,tt){var i=0; while(i<s.t.length-1 && s.t[i+1]<tt) i++; retur
 function medianOf(key){return grid.map(function(tt){var a=S.map(function(s){return pick(s,key,tt);}).sort(function(p,q){return p-q;});return a[Math.floor(a.length/2)];});}
 function hhmm(mjd){var d=new Date((mjd-40587)*86400000);return ('0'+d.getUTCHours()).slice(-2)+':'+('0'+d.getUTCMinutes()).slice(-2);}
 var c=document.getElementById('c'), x=c.getContext('2d');
-var W=c.width,H=c.height,ML=54,MR=16,MT=16,MB=28;
+var W=c.width,H=c.height,ML=64,MR=18,MT=18,MB=34;
 var all=[].concat.apply([],S.map(function(s){return s.v;}));
 var lo=Math.min.apply(null,all), hi=Math.max.apply(null,all);
 function X(tt){return ML+(W-ML-MR)*(tt-t0)/((t1-t0)||1);}
 function Y(v){return H-MB-(H-MT-MB)*(v-lo)/((hi-lo)||1);}
-x.strokeStyle='#ececec'; x.fillStyle='#777'; x.font='13px system-ui'; x.lineWidth=1;
+x.strokeStyle='#e4e4e4'; x.fillStyle='#555'; x.font='600 18px system-ui'; x.lineWidth=1;
 [0,25,50,75,100].forEach(function(p){var y=Y(lo+(hi-lo)*p/100);
- x.beginPath();x.moveTo(ML,y);x.lineTo(W-MR,y);x.stroke(); x.fillText(p+'th',8,y+4);});
-x.fillText(hhmm(t0)+' UTC',ML,H-8); x.fillText(hhmm(t1)+' UTC',W-MR-62,H-8);
-x.strokeStyle='#9aa7b4'; x.lineWidth=1.5; x.globalAlpha=0.75;
+ x.beginPath();x.moveTo(ML,y);x.lineTo(W-MR,y);x.stroke(); x.fillText(p+'th',6,y+6);});
+x.fillText(hhmm(t0)+' UTC',ML,H-8); x.fillText(hhmm(t1)+' UTC',W-MR-86,H-8);
+x.strokeStyle='#8fa0b2'; x.lineWidth=2; x.globalAlpha=0.8;
 S.forEach(function(s){x.beginPath();s.t.forEach(function(tt,i){var px=X(tt),py=Y(s.v[i]); i?x.lineTo(px,py):x.moveTo(px,py);});x.stroke();});
 x.globalAlpha=1; var med=medianOf('v');
-x.strokeStyle='#1f4e9a'; x.lineWidth=3.6; x.beginPath();
+x.strokeStyle='#1f4e9a'; x.lineWidth=5; x.beginPath();
 grid.forEach(function(tt,i){var px=X(tt),py=Y(med[i]); i?x.lineTo(px,py):x.moveTo(px,py);}); x.stroke();
-x.fillStyle='#1f4e9a'; x.font='600 15px system-ui'; x.fillText('cluster median',ML+10,MT+18);
-x.fillStyle='#6b7885'; x.font='600 13px system-ui'; x.fillText('individual receivers',ML+10,MT+38);
+x.fillStyle='#1f4e9a'; x.font='700 22px system-ui'; x.fillText('cluster median',ML+10,MT+24);
+x.fillStyle='#5a6874'; x.font='700 18px system-ui'; x.fillText('individual receivers',ML+10,MT+50);
 function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) return;
- var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=54, top=26;
+ var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=54, top=52;
  var g=medianOf(key), l2=Math.min.apply(null,g), h2=Math.max.apply(null,g);
  xx.strokeStyle='#f0f0f0'; xx.beginPath(); xx.moveTo(m,(h+top)/2); xx.lineTo(w-10,(h+top)/2); xx.stroke();
- xx.strokeStyle=color; xx.lineWidth=2.8; xx.beginPath();
- g.forEach(function(v,i){var px=m+(w-m-10)*i/(g.length-1), py=h-12-(h-top-16)*(v-l2)/((h2-l2)||1); i?xx.lineTo(px,py):xx.moveTo(px,py);}); xx.stroke();
- xx.fillStyle='#333'; xx.font='600 15px system-ui'; xx.fillText(label,m+6,15);}
+ xx.strokeStyle=color; xx.lineWidth=4; xx.beginPath();
+ g.forEach(function(v,i){var px=m+(w-m-10)*i/(g.length-1), py=h-14-(h-top-20)*(v-l2)/((h2-l2)||1); i?xx.lineTo(px,py):xx.moveTo(px,py);}); xx.stroke();
+ xx.fillStyle='#222'; xx.font='700 24px system-ui'; xx.fillText(label,m,26);}
 panel('c1','v','#1f4e9a','combined index (higher = more organised, more active)');
 panel('c2','l','#2e8b57','the moist patches grow bigger (organising)');
 panel('c3','s','#8e44ad','the signal trembles more (air being stirred)');
