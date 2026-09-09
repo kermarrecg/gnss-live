@@ -14,7 +14,7 @@ h1{font-size:32px;margin:0 0 6px;line-height:1.15}h2{font-size:21px;margin:30px 
 canvas{width:100%;height:auto;display:block;margin-bottom:6px}
 .note{font-size:15px;color:#666;margin-top:28px;border-top:1px solid #ddd;padding-top:12px;line-height:1.55}</style></head><body>
 <h1>What eight low-cost GNSS receivers see above the Cevennes</h1>
-<div class="sub">09 Sep 2026 15:39 UTC &middot; 8 stations live &middot; updated every 15 minutes</div>
+<div class="sub">09 Sep 2026 15:40 UTC &middot; 8 stations live &middot; updated every 15 minutes</div>
 <div class="big">21<span class="pct">th percentile</span></div>
 <div class="lab">how unusual the atmosphere is right now, compared with the last two days</div>
 <div id="map"></div>
@@ -85,8 +85,8 @@ function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) r
  xx.strokeStyle=color; xx.lineWidth=2.8; xx.beginPath();
  g.forEach(function(v,i){var px=m+(w-m-10)*i/(g.length-1), py=h-12-(h-26)*(v-l2)/((h2-l2)||1); i?xx.lineTo(px,py):xx.moveTo(px,py);}); xx.stroke();
  xx.fillStyle='#333'; xx.font='600 14px system-ui'; xx.fillText(label,m+6,16);}
-panel('c1','v','#1f4e9a','combined index');
-panel('c2','l','#2e8b57','size of the structures');
-panel('c3','s','#8e44ad','strength of the fluctuations');
+panel('c1','v','#1f4e9a','combined index (higher = more organised, more active)');
+panel('c2','l','#2e8b57','structures getting longer (organisation)');
+panel('c3','s','#8e44ad','fluctuations getting stronger');
 });
 </script></body></html>
