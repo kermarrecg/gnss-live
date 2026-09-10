@@ -15,7 +15,7 @@ h2{font-size:26px;margin:34px 0 10px}
 .card{background:linear-gradient(180deg,#eef2ff 0%,#ffffff 100%);border-radius:18px;padding:16px 18px 10px;box-shadow:0 8px 24px rgba(15,23,42,.10);margin:8px 0 18px}
 .card svg{width:100%;height:auto;display:block}
 .cap{font-size:18px;color:#64748b;margin:8px 4px 6px}
-#map{height:400px;min-height:400px;width:100%;border-radius:14px;box-shadow:0 8px 24px rgba(15,23,42,.10)}
+#map{height:380px;min-height:380px;margin-top:14px;width:100%;border-radius:14px;box-shadow:0 8px 24px rgba(15,23,42,.10)}
 .legend{font-size:18px;color:#64748b;margin:10px 0 4px}
 .dot{display:inline-block;width:13px;height:13px;border-radius:50%;vertical-align:-2px;margin:0 4px 0 14px}
 .peak{font-size:20px;color:#334155;background:#f8fafc;border-radius:12px;padding:12px 16px;margin:14px 0 6px}
@@ -31,19 +31,18 @@ a{color:#4338ca}
 .more{font-size:20px;color:#334155;background:#eef2ff;border-radius:12px;padding:14px 18px;margin:26px 0 0}
 </style></head><body>
 <h1>Is the air over the Cevennes getting ready for a storm?</h1>
-<div class="sub">last measurement 10 Sep 23:26 (window centred 10 Sep 22:12) &middot; 6 stations &middot; 90 min old</div>
+<div class="sub">last measurement 10 Sep 23:26 (window centred 10 Sep 22:12) &middot; 6 stations &middot; 91 min old</div>
 <div class="state"><div class="big">ordinary</div><div class="lab">more stirred up than 73% of the last two days</div></div>
-<p class="lead">Eight small GPS antennas in the Cevennes watch the water vapour above them, every 15 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
-<h2 style="margin-top:18px">The last hours, all eight antennas together</h2>
-<canvas id="c" width="900" height="320"></canvas>
-<div class="cap">Thick line: what the group of antennas agrees on. Shaded band: how much they disagree. Thin lines: each antenna alone. Time in UTC.</div>
-<div class="peak">Most organised moment of the last hours: <b id="peak">&hellip;</b>. Storms in the Cevennes are expected this autumn; the question is whether this number climbs before the next one, and how many hours ahead.</div>
-<h2>Where the antennas are</h2>
 <div id="map"></div>
 <div class="legend">Each marker is one antenna, coloured by its own state.
 <span class="dot" style="background:#4338ca"></span>ordinary
 <span class="dot" style="background:#f59e0b"></span>high
 <span class="dot" style="background:#e11d48"></span>extreme</div>
+<p class="lead">Eight small GPS antennas in the Cevennes watch the water vapour above them, every 15 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
+<h2 style="margin-top:18px">The last hours, all eight antennas together</h2>
+<canvas id="c" width="900" height="320"></canvas>
+<div class="cap">Thick line: what the group of antennas agrees on. Shaded band: how much they disagree. Thin lines: each antenna alone. Time in UTC.</div>
+<div class="peak">Most organised moment of the last hours: <b id="peak">&hellip;</b>. Storms in the Cevennes are expected this autumn; the question is whether this number climbs before the next one, and how many hours ahead.</div>
 <h2>How the measurement works</h2>
 <div class="card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
 <defs>
