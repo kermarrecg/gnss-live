@@ -30,9 +30,13 @@ canvas{width:100%;height:auto;display:block;margin-bottom:6px}
 a{color:#4338ca}
 </style></head><body>
 <h1>Is the air over the Cevennes getting ready for a storm?</h1>
-<div class="sub">last measurement 10 Sep 23:26 (window centred 10 Sep 22:12) &middot; 6 stations &middot; 78 min old</div>
+<div class="sub">last measurement 10 Sep 23:26 (window centred 10 Sep 22:12) &middot; 6 stations &middot; 84 min old</div>
 <div class="state"><div class="big">ordinary</div><div class="lab">more stirred up than 73% of the last two days</div></div>
 <p class="lead">Eight small GPS antennas in the Cevennes watch the water vapour above them, every 15 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
+<h2 style="margin-top:18px">The last hours, all eight antennas together</h2>
+<canvas id="c" width="900" height="320"></canvas>
+<div class="cap">Thick line: what the group of antennas agrees on. Shaded band: how much they disagree. Thin lines: each antenna alone. Time in UTC.</div>
+<div class="peak">Most organised moment of the last hours: <b id="peak">&hellip;</b>. Storms in the Cevennes are expected this autumn; the question is whether this number climbs before the next one, and how many hours ahead.</div>
 <div class="card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
 <defs>
 <linearGradient id="skyL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e7ff"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
@@ -119,11 +123,7 @@ a{color:#4338ca}
 <span class="dot" style="background:#4338ca"></span>ordinary
 <span class="dot" style="background:#f59e0b"></span>high
 <span class="dot" style="background:#e11d48"></span>extreme</div>
-<div class="peak">Most organised moment of the last hours: <b id="peak">&hellip;</b>. Storms in the Cevennes are expected this autumn; the question is whether this number climbs before the next one, and how many hours ahead.</div>
 <details><summary>For the scientists</summary>
-<h2>Cluster index over the last hours</h2>
-<canvas id="c" width="900" height="320"></canvas>
-<div class="cap">Thick line: cluster median. Band: interquartile range across antennas. Thin lines: individual antennas. A station counts at a given time only if it has a measurement within 20 minutes.</div>
 <h2>The two observables behind the index</h2>
 <canvas id="c2" width="900" height="170"></canvas>
 <canvas id="c3" width="900" height="170"></canvas>
