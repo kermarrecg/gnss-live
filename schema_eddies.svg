@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
+<defs>
+<linearGradient id="skyL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0e7ff"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+<linearGradient id="skyR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e1b4b"/><stop offset="0.55" stop-color="#4338ca"/><stop offset="1" stop-color="#c7d2fe"/></linearGradient>
+<radialGradient id="moist" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></radialGradient>
+<radialGradient id="moistR" cx="0.35" cy="0.3" r="0.9"><stop offset="0" stop-color="#a5b4fc"/><stop offset="1" stop-color="#4f46e5"/></radialGradient>
+<linearGradient id="sig" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f43f5e"/><stop offset="1" stop-color="#d946ef"/></linearGradient>
+<filter id="shadow" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.22"/></filter>
+<filter id="glow" x="-20%" y="-30%" width="140%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#c7d2fe" flood-opacity="0.9"/></filter>
+<clipPath id="cL"><rect x="40" y="110" width="640" height="470" rx="26"/></clipPath>
+<clipPath id="cR"><rect x="720" y="110" width="640" height="470" rx="26"/></clipPath>
+</defs>
+<rect width="1400" height="780" fill="#ffffff"/>
+<g font-family="Inter,system-ui,-apple-system,'Segoe UI',sans-serif">
+<text x="700" y="46" font-size="34" fill="#0f172a" text-anchor="middle">The GPS signal crosses the water vapour on its way down.</text>
+<text x="700" y="88" font-size="38" font-weight="800" fill="url(#sig)" text-anchor="middle">We measure how much it trembles.</text>
+<rect x="40" y="110" width="640" height="470" fill="url(#skyL)" rx="26" filter="url(#shadow)"/>
+<rect x="40" y="290" width="640" height="210" fill="#818cf8" fill-opacity="0.16" clip-path="url(#cL)"/>
+<rect x="40" y="530" width="640" height="50" fill="#1e293b" clip-path="url(#cL)"/>
+<text x="360" y="172" font-size="44" font-weight="800" fill="#0f172a" text-anchor="middle">Calm afternoon</text>
+<text x="62" y="278" font-size="24" fill="#475569">boundary layer, about 1 km of air</text>
+<g transform="translate(585,215) rotate(-22)"><rect x="-22" y="-17" width="44" height="34" fill="#0f172a" rx="7"/><rect x="-98" y="-12" width="66" height="24" fill="#6366f1" rx="4"/><line x1="-81.5" y1="-12" x2="-81.5" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><line x1="-65.0" y1="-12" x2="-65.0" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><line x1="-48.5" y1="-12" x2="-48.5" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><rect x="32" y="-12" width="66" height="24" fill="#6366f1" rx="4"/><line x1="48.5" y1="-12" x2="48.5" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><line x1="65.0" y1="-12" x2="65.0" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><line x1="81.5" y1="-12" x2="81.5" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><line x1="-32" y1="0" x2="-22" y2="0" stroke="#0f172a" stroke-width="5"/><line x1="22" y1="0" x2="32" y2="0" stroke="#0f172a" stroke-width="5"/><circle cx="0" cy="30" r="10" fill="none" stroke="#0f172a" stroke-width="5"/><line x1="0" y1="17" x2="0" y2="24" stroke="#0f172a" stroke-width="5"/></g>
+<circle cx="216" cy="402" r="15" fill="url(#moist)"/>
+<circle cx="417" cy="415" r="10" fill="url(#moist)"/>
+<circle cx="92" cy="449" r="13" fill="url(#moist)"/>
+<circle cx="214" cy="474" r="16" fill="url(#moist)"/>
+<circle cx="545" cy="391" r="19" fill="url(#moist)"/>
+<circle cx="168" cy="417" r="22" fill="url(#moist)"/>
+<circle cx="373" cy="434" r="19" fill="url(#moist)"/>
+<circle cx="120" cy="436" r="18" fill="url(#moist)"/>
+<circle cx="251" cy="320" r="22" fill="url(#moist)"/>
+<circle cx="345" cy="430" r="22" fill="url(#moist)"/>
+<circle cx="478" cy="462" r="15" fill="url(#moist)"/>
+<circle cx="525" cy="386" r="23" fill="url(#moist)"/>
+<circle cx="568" cy="331" r="11" fill="url(#moist)"/>
+<circle cx="204" cy="469" r="16" fill="url(#moist)"/>
+<circle cx="430" cy="363" r="17" fill="url(#moist)"/>
+<circle cx="297" cy="371" r="18" fill="url(#moist)"/>
+<circle cx="406" cy="460" r="19" fill="url(#moist)"/>
+<circle cx="596" cy="452" r="24" fill="url(#moist)"/>
+<circle cx="454" cy="341" r="22" fill="url(#moist)"/>
+<circle cx="616" cy="460" r="18" fill="url(#moist)"/>
+<circle cx="478" cy="349" r="21" fill="url(#moist)"/>
+<circle cx="400" cy="361" r="10" fill="url(#moist)"/>
+<circle cx="555" cy="473" r="9" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="525" cy="381" r="10" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="247" cy="438" r="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="109" cy="413" r="8" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="480" cy="368" r="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="624" cy="396" r="19" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="255" cy="327" r="15" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="102" cy="347" r="12" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="421" cy="340" r="8" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="562" cy="365" r="19" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="578" cy="375" r="13" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<circle cx="371" cy="418" r="15" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+<line x1="565" y1="240" x2="190" y2="438" stroke="url(#sig)" stroke-width="8" stroke-dasharray="18 12" stroke-linecap="round"/>
+<g transform="translate(190,530)"><rect x="-7" y="-80" width="14" height="80" fill="#1e293b" rx="3"/><ellipse cx="0" cy="-84" rx="36" ry="11" fill="#1e293b"/></g>
+<rect x="720" y="110" width="640" height="470" fill="url(#skyR)" rx="26" filter="url(#shadow)"/>
+<rect x="720" y="290" width="640" height="210" fill="#312e81" fill-opacity="0.22" clip-path="url(#cR)"/>
+<rect x="720" y="530" width="640" height="50" fill="#0b1020" clip-path="url(#cR)"/>
+<text x="1040" y="172" font-size="44" font-weight="800" fill="#ffffff" text-anchor="middle">Hours before a storm</text>
+<text x="742" y="278" font-size="24" fill="#c7d2fe">boundary layer, about 1 km of air</text>
+<g transform="translate(1265,215) rotate(-22)"><rect x="-22" y="-17" width="44" height="34" fill="#ffffff" rx="7"/><rect x="-98" y="-12" width="66" height="24" fill="#a5b4fc" rx="4"/><line x1="-81.5" y1="-12" x2="-81.5" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><line x1="-65.0" y1="-12" x2="-65.0" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><line x1="-48.5" y1="-12" x2="-48.5" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><rect x="32" y="-12" width="66" height="24" fill="#a5b4fc" rx="4"/><line x1="48.5" y1="-12" x2="48.5" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><line x1="65.0" y1="-12" x2="65.0" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><line x1="81.5" y1="-12" x2="81.5" y2="12" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7"/><line x1="-32" y1="0" x2="-22" y2="0" stroke="#ffffff" stroke-width="5"/><line x1="22" y1="0" x2="32" y2="0" stroke="#ffffff" stroke-width="5"/><circle cx="0" cy="30" r="10" fill="none" stroke="#ffffff" stroke-width="5"/><line x1="0" y1="17" x2="0" y2="24" stroke="#ffffff" stroke-width="5"/></g>
+<ellipse cx="830" cy="400" rx="78" ry="40" fill="url(#moistR)" transform="rotate(-14 830 400)" filter="url(#glow)"/>
+<ellipse cx="970" cy="400" rx="78" ry="40" fill="url(#moistR)" transform="rotate(-14 970 400)" filter="url(#glow)"/>
+<ellipse cx="1110" cy="400" rx="78" ry="40" fill="url(#moistR)" transform="rotate(-14 1110 400)" filter="url(#glow)"/>
+<ellipse cx="1250" cy="400" rx="78" ry="40" fill="url(#moistR)" transform="rotate(-14 1250 400)" filter="url(#glow)"/>
+<ellipse cx="900" cy="345" rx="46" ry="16" fill="#ffffff" fill-opacity="0.92" transform="rotate(-14 900 345)"/>
+<ellipse cx="1040" cy="345" rx="46" ry="16" fill="#ffffff" fill-opacity="0.92" transform="rotate(-14 1040 345)"/>
+<ellipse cx="1180" cy="345" rx="46" ry="16" fill="#ffffff" fill-opacity="0.92" transform="rotate(-14 1180 345)"/>
+<polyline points="1245.0,240.0 1243.4,240.8 1241.9,241.7 1240.3,242.5 1238.8,243.3 1237.2,244.1 1235.6,244.9 1234.1,245.8 1232.5,246.6 1230.9,247.4 1229.4,248.2 1227.8,249.1 1226.2,249.9 1224.7,250.7 1223.1,251.6 1221.6,252.4 1220.0,253.2 1218.4,254.0 1216.9,254.8 1215.3,255.7 1213.8,256.5 1212.2,257.3 1210.6,258.1 1209.1,259.0 1207.5,259.8 1205.9,260.6 1204.4,261.4 1202.8,262.3 1201.2,263.1 1199.7,263.9 1198.1,264.8 1196.6,265.6 1195.0,266.4 1193.4,267.2 1191.9,268.1 1190.3,268.9 1188.8,269.7 1187.2,270.5 1185.6,271.4 1184.1,272.2 1182.5,273.0 1180.9,273.8 1179.4,274.6 1177.8,275.5 1176.2,276.3 1174.7,277.1 1173.1,277.9 1171.6,278.8 1170.0,279.6 1168.4,280.4 1166.9,281.2 1165.3,282.1 1163.8,282.9 1162.2,283.7 1160.6,284.6 1159.1,285.4 1157.5,286.2 1155.9,287.0 1154.4,287.9 1152.8,288.7 1151.2,289.5 1149.6,290.2 1147.9,290.8 1146.2,291.3 1144.5,291.9 1142.9,292.6 1141.4,293.5 1139.9,294.5 1138.6,295.8 1137.3,297.2 1136.2,298.8 1135.0,300.4 1133.8,302.0 1132.6,303.4 1131.3,304.7 1129.9,305.8 1128.2,306.5 1126.4,306.8 1124.4,306.8 1122.3,306.5 1120.0,306.0 1117.6,305.3 1115.2,304.5 1112.9,303.9 1110.7,303.5 1108.7,303.5 1106.9,304.0 1105.5,305.0 1104.3,306.5 1103.4,308.6 1102.8,311.2 1102.3,314.2 1102.0,317.3 1101.7,320.5 1101.3,323.6 1100.8,326.3 1099.9,328.5 1098.7,330.1 1097.2,330.8 1095.2,330.9 1092.8,330.1 1090.0,328.7 1087.0,326.7 1083.8,324.4 1080.5,322.0 1077.3,319.7 1074.3,317.8 1071.6,316.6 1069.4,316.2 1067.7,316.7 1066.5,318.2 1065.9,320.8 1065.7,324.2 1065.9,328.4 1066.4,333.1 1067.0,338.0 1067.4,342.7 1067.7,346.9 1067.4,350.3 1066.7,352.7 1065.4,354.0 1063.5,354.2 1061.1,353.4 1058.1,351.5 1054.8,348.9 1051.1,345.9 1047.4,342.6 1043.7,339.4 1040.2,336.6 1037.1,334.5 1034.5,333.3 1032.4,333.1 1030.9,334.1 1030.0,336.2 1029.7,339.3 1029.8,343.2 1030.2,347.8 1030.7,352.7 1031.3,357.6 1031.8,362.2 1031.9,366.3 1031.7,369.6 1030.9,371.8 1029.5,373.0 1027.5,373.0 1025.0,372.0 1021.9,370.0 1018.5,367.3 1014.9,364.2 1011.1,360.9 1007.5,357.8 1004.0,355.1 1001.0,353.1 998.4,352.0 996.5,352.0 995.1,353.2 994.2,355.4 994.0,358.7 994.1,362.7 994.5,367.3 995.1,372.3 995.7,377.2 996.1,381.7 996.2,385.7 995.9,388.8 995.0,390.9 993.5,391.9 991.5,391.8 988.8,390.6 985.7,388.5 982.3,385.7 978.6,382.6 974.9,379.3 971.2,376.2 967.9,373.6 964.9,371.7 962.4,370.8 960.5,371.0 959.2,372.3 958.5,374.7 958.3,378.1 958.4,382.2 958.9,386.9 959.5,391.9 960.1,396.7 960.5,401.2 960.5,405.1 960.1,408.1 959.1,410.0 957.5,410.8 955.4,410.5 952.7,409.2 949.5,407.0 946.0,404.1 942.3,400.9 938.6,397.6 935.0,394.6 931.7,392.1 928.8,390.4 926.4,389.6 924.6,390.0 923.3,391.5 922.7,394.0 922.6,397.5 922.8,401.8 923.3,406.5 923.9,411.5 924.5,416.3 924.8,420.7 924.8,424.4 924.3,427.3 923.2,429.0 921.6,429.7 919.3,429.2 916.5,427.7 913.3,425.4 909.8,422.5 906.1,419.3 902.3,416.0 898.8,413.0 895.5,410.6 892.7,409.0 890.4,408.5 888.6,409.0 887.5,410.6 886.9,413.3 886.9,417.0 887.2,421.3 887.7,426.1 888.3,431.1 888.8,435.9 889.1,440.2 889.0,443.8 888.5,446.5 887.3,448.1 885.6,448.5 883.2,447.9 880.4,446.3 877.1,443.9 873.5,440.9 869.8,437.6" fill="none" stroke="url(#sig)" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+<g transform="translate(870,530)"><rect x="-7" y="-80" width="14" height="80" fill="#ffffff" rx="3"/><ellipse cx="0" cy="-84" rx="36" ry="11" fill="#ffffff"/></g>
+<circle cx="290" cy="628" r="11" fill="url(#moist)"/><text x="310" y="637" font-size="26" fill="#0f172a">moist air</text>
+<circle cx="455" cy="628" r="11" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/><text x="475" y="637" font-size="26" fill="#0f172a">dry air</text>
+<text x="360" y="690" font-size="30" fill="#0f172a" text-anchor="middle">small, short-lived pockets</text>
+<text x="360" y="732" font-size="30" fill="#0f172a" text-anchor="middle">the signal barely trembles</text>
+<text x="1040" y="690" font-size="30" fill="#0f172a" text-anchor="middle">large, long-lived, lined-up structures</text>
+<text x="1040" y="732" font-size="29" font-weight="800" fill="url(#sig)" text-anchor="middle">the signal trembles slowly and strongly</text>
+</g></svg>
