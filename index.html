@@ -187,9 +187,9 @@ for(var i=grid.length-1;i>=0;i--){if(st[i]) x.lineTo(X(grid[i]),Y(st[i].q1));} x
 x.strokeStyle='#94a3b8'; x.lineWidth=1.2; x.globalAlpha=0.7;
 S.forEach(function(s){x.beginPath();s.t.forEach(function(tt,i){var px=X(tt),py=Y(s.v[i]); (i&&(tt-s.t[i-1])<=0.5/24)?x.lineTo(px,py):x.moveTo(px,py);});x.stroke();});
 x.globalAlpha=1; x.strokeStyle='#4338ca'; x.lineWidth=5; var tprov=t1-1/24;
-x.setLineDash([]); x.beginPath(); first=true; grid.forEach(function(tt,i){if(st[i]&&tt<=tprov){var px=X(tt),py=Y(st[i].med); first?x.moveTo(px,py):x.lineTo(px,py); first=false;}}); x.stroke();
+var nmax=S.length; x.setLineDash([]); x.beginPath(); first=true; grid.forEach(function(tt,i){if(st[i]&&tt<=tprov&&st[i].n>=Math.max(3,nmax/2)){var px=X(tt),py=Y(st[i].med); first?x.moveTo(px,py):x.lineTo(px,py); first=false;} else first=true;}); x.stroke();
 x.setLineDash([6,6]); x.lineWidth=3.5; x.beginPath(); first=true; grid.forEach(function(tt,i){if(st[i]&&tt>=tprov-1e-6){var px=X(tt),py=Y(st[i].med); first?x.moveTo(px,py):x.lineTo(px,py); first=false;}}); x.stroke(); x.setLineDash([]);
-var pk=-1,pi=-1; st.forEach(function(s,i){if(s&&s.med>pk){pk=s.med;pi=i;}});
+var pk=-1,pi=-1; st.forEach(function(s,i){if(s&&s.n>=Math.max(3,S.length/2)&&grid[i]<=tprov&&s.med>pk){pk=s.med;pi=i;}});
 if(pi>=0){var pc=Math.round(100*all.filter(function(v){return v<pk;}).length/all.length); document.getElementById('peak').textContent=pc+'th percentile at '+hhmm(grid[pi])+' UTC'; x.fillStyle='#e11d48'; x.beginPath(); x.arc(X(grid[pi]),Y(pk),7,0,6.3); x.fill();}
 function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, top=46, mb=34;
  var g=stats(key), vals=g.filter(function(s){return s;}).map(function(s){return s.med;}), l2=Math.min.apply(null,vals), h2=Math.max.apply(null,vals);
