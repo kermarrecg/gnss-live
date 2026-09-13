@@ -35,7 +35,7 @@ a{color:#4338ca}
 .more{font-size:20px;color:#334155;background:#eef2ff;border-radius:12px;padding:14px 18px;margin:26px 0 0}
 </style></head><body>
 <h1>Is the air over the Cevennes getting ready for a storm?</h1>
-<div class="sub">last measurement 13 Sep 09:54 (window centred 13 Sep 08:56) &middot; 8 stations &middot; 58 min old</div>
+<div class="sub">last measurement 13 Sep 09:56 (window centred 13 Sep 08:56) &middot; 8 stations &middot; 61 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big">ordinary</div><div class="lab">calmer than 59% of the last two days</div></div>
 <p class="lead">Eight small GPS antennas in the Cevennes watch the water vapour above them, every 15 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
 </div><div class="topr"><div id="map"></div>
@@ -166,8 +166,8 @@ M.forEach(function(m){var c=m.c<75?'#4338ca':(m.c<90?'#f59e0b':'#e11d48');
  L.circleMarker([m.la,m.lo],{radius:11,color:'#fff',weight:2,fillColor:c,fillOpacity:0.95}).addTo(map).bindTooltip(m.lab+' ('+m.n+'): '+m.c+'th percentile');});
 setTimeout(function(){map.invalidateSize();},400);
 var tAll=[].concat.apply([],S.map(function(s){return s.t;}));
-var t0=Math.min.apply(null,tAll), t1=Math.max.apply(null,tAll), TOL=20/1440;
-var grid=[]; for(var k=0;k<160;k++) grid.push(t0+(t1-t0)*k/159);
+var t0=Math.min.apply(null,tAll), t1=Math.max.apply(null,tAll), TOL=60/1440;
+var grid=[]; for(var k=0;k<300;k++) grid.push(t0+(t1-t0)*k/299);
 function near(s,key,tt){var best=null,bd=1e9; for(var i=0;i<s.t.length;i++){var d=Math.abs(s.t[i]-tt); if(d<bd){bd=d;best=s[key][i];}} return bd<=TOL?best:null;}
 function stats(key){return grid.map(function(tt){var a=S.map(function(s){return near(s,key,tt);}).filter(function(v){return v!==null;}).sort(function(p,q){return p-q;}); if(!a.length) return null; var q=function(f){var i=(a.length-1)*f, lo=Math.floor(i), hi=Math.ceil(i); return a[lo]+(a[hi]-a[lo])*(i-lo);}; return {med:q(0.5),q1:q(0.25),q3:q(0.75),n:a.length};});}
 function hhmm(mjd){var d=new Date((mjd-40587)*86400000);return ('0'+d.getUTCHours()).slice(-2)+':'+('0'+d.getUTCMinutes()).slice(-2);}
@@ -183,9 +183,9 @@ function Y(v){return H-MB-(H-MT-MB)*(v-lo)/((hi-lo)||1);}
 x.strokeStyle='#e2e8f0'; x.fillStyle='#64748b'; x.font='600 15px system-ui'; x.lineWidth=1;
 [0,25,50,75,100].forEach(function(p){var y=Y(lo+(hi-lo)*p/100); x.beginPath();x.moveTo(ML,y);x.lineTo(W-MR,y);x.stroke(); x.fillText(p+'th',6,y+5);});
 axis(x,W,H,ML,MR,MB,lo,hi);
-x.fillStyle='rgba(67,56,202,0.16)'; x.beginPath(); var first=true;
-grid.forEach(function(tt,i){if(st[i]){var px=X(tt),py=Y(st[i].q3); first?x.moveTo(px,py):x.lineTo(px,py); first=false;}});
-for(var i=grid.length-1;i>=0;i--){if(st[i]) x.lineTo(X(grid[i]),Y(st[i].q1));} x.closePath(); x.fill();
+x.fillStyle='rgba(67,56,202,0.16)'; var nmin=Math.max(3,S.length/2); x.beginPath(); var first=true;
+grid.forEach(function(tt,i){if(st[i]&&st[i].n>=nmin){var px=X(tt),py=Y(st[i].q3); first?x.moveTo(px,py):x.lineTo(px,py); first=false;}});
+for(var i=grid.length-1;i>=0;i--){if(st[i]&&st[i].n>=nmin) x.lineTo(X(grid[i]),Y(st[i].q1));} x.closePath(); x.fill();
 x.strokeStyle='#94a3b8'; x.lineWidth=1.2; x.globalAlpha=0.7;
 S.forEach(function(s){x.beginPath();s.t.forEach(function(tt,i){var px=X(tt),py=Y(s.v[i]); (i&&(tt-s.t[i-1])<=0.5/24)?x.lineTo(px,py):x.moveTo(px,py);});x.stroke();});
 x.globalAlpha=1; x.strokeStyle='#4338ca'; x.lineWidth=5; var tprov=t1-1/24;
