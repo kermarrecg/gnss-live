@@ -36,9 +36,9 @@ a{color:#4338ca}
 </style></head><body>
 <h1>Is the air over the Reunion Island getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px"><a href="index.html">See also: the Cevennes, southern France</a></div>
-<div class="sub">air state at 18 Sep 09:35, computed 18 Sep 09:58 &middot; 8 stations &middot; 25 min old</div>
+<div class="sub">air state at 18 Sep 09:35, computed 18 Sep 09:58 &middot; 8 stations &middot; 30 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big">ordinary</div><div class="lab">more stirred up than 55% of the last two days</div></div>
-<p class="lead">Eight small GPS antennas in the Reunion Island watch the water vapour above them, every 15 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
+<p class="lead">Eight small GPS antennas in the Reunion Island watch the water vapour above them, every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
 </div><div class="topr"><div id="map"></div>
 <div class="legend">Each marker is one antenna, coloured by its own state.
 <span class="dot" style="background:#4338ca"></span>ordinary
@@ -142,7 +142,7 @@ a{color:#4338ca}
 <p><b>What the signature means.</b> On five radar-verified networks on four continents, the same joint rise precedes the first convective echo by hours. It reads the organisation of boundary-layer moisture, which the delay itself does not carry. A single antenna is noisy; only the cluster median is interpreted. This measures a state of the air, not a trigger, and is not a forecast.</p>
 <p><b>References.</b> Kermarrec et al., <i>Atmos. Chem. Phys.</i> 25, 3567 (2025); Kermarrec, Schrader, Calbet &amp; Deng, <i>J. Geophys. Res. Atmos.</i> 131, e2026JD047347 (2026).</p>
 </div>
-<div class="note">Research experiment by Gael Kermarrec (Institute of Meteorology and Climatology, Leibniz University Hannover). Observations from low-cost receivers of the community-run <a href="https://centipede.fr">Centipede RTK</a> network, processed every 15 minutes on the LUIS cluster. Not a forecast and not a warning; official warnings are issued by Meteo-France.</div>
+<div class="note">Research experiment by Gael Kermarrec (Institute of Meteorology and Climatology, Leibniz University Hannover). Observations from low-cost receivers of the community-run <a href="https://centipede.fr">Centipede RTK</a> network, processed every 5 minutes on the LUIS cluster. Not a forecast and not a warning; official warnings are issued by Meteo-France.</div>
 </details>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -192,8 +192,8 @@ seg.forEach(function(c){ x.beginPath(); c.forEach(function(i,k){ var px=X(grid[i
 x.strokeStyle='#94a3b8'; x.lineWidth=1.2; x.globalAlpha=0.7;
 S.forEach(function(s){x.beginPath();s.t.forEach(function(tt,i){var px=X(tt),py=Y(s.v[i]); (i&&(tt-s.t[i-1])<=0.5/24)?x.lineTo(px,py):x.moveTo(px,py);});x.stroke();});
 x.globalAlpha=1; x.strokeStyle='#4338ca'; x.lineWidth=5; var tprov=t1+1; S.forEach(function(s){ if(s.p){ for(var i=0;i<s.p.length;i++){ if(s.p[i]==1 && s.t[i]<tprov) tprov=s.t[i]; } } }); if(tprov>t1) tprov=t1-1/24;   // pointille = fenetres provisoires (ok=2), sinon derniere heure par defaut
-var nmax=S.length; x.setLineDash([]); x.beginPath(); first=true; grid.forEach(function(tt,i){if(st[i]&&tt<=tprov&&st[i].n>=3){var px=X(tt),py=Y(st[i].med); first?x.moveTo(px,py):x.lineTo(px,py); first=false;} else first=true;}); x.stroke();
-x.setLineDash([6,6]); x.lineWidth=3.5; x.beginPath(); first=true; grid.forEach(function(tt,i){if(st[i]&&tt>=tprov-1e-6){var px=X(tt),py=Y(st[i].med); first?x.moveTo(px,py):x.lineTo(px,py); first=false;}}); x.stroke(); x.setLineDash([]);
+tprov=Math.max(tprov,t1-1.5/24); var nmax=S.length; x.setLineDash([]); x.beginPath(); first=true; grid.forEach(function(tt,i){if(st[i]&&tt<=tprov&&st[i].n>=3){var px=X(tt),py=Y(st[i].med); first?x.moveTo(px,py):x.lineTo(px,py); first=false;} else first=true;}); x.stroke();
+x.setLineDash([6,6]); x.lineWidth=3.5; x.beginPath(); first=true; grid.forEach(function(tt,i){if(st[i]&&tt>=tprov-1e-6){var px=X(tt),py=Y(st[i].med); first?x.moveTo(px,py):x.lineTo(px,py); first=false;} else first=true;}); x.stroke(); x.setLineDash([]);
 var pk=-1,pi=-1; st.forEach(function(s,i){if(s&&s.n>=3&&grid[i]<=tprov&&s.med>pk){pk=s.med;pi=i;}});
 if(pi>=0){var pc=Math.round(100*all.filter(function(v){return v<pk;}).length/all.length); document.getElementById('peak').textContent=pc+'th percentile at '+hhmm(grid[pi])+' UTC'; x.fillStyle='#e11d48'; x.beginPath(); x.arc(X(grid[pi]),Y(pk),7,0,6.3); x.fill();}
 function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, top=46, mb=34;
