@@ -36,7 +36,7 @@ a{color:#4338ca}
 </style></head><body>
 <h1>Is the air over the Reunion Island getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="index.html">the Cevennes, southern France</a> &middot; <a href="japan.html">Japan, Tsukuba and the Seto Sea</a> &middot; <a href="hongkong.html">Hong Kong, typhoon season</a></div>
-<div class="sub">air state at 11 Oct 12:55, computed 11 Oct 13:15 &middot; 8 stations &middot; 29 min old</div>
+<div class="sub">air state at 11 Oct 12:55, computed 11 Oct 13:15 &middot; 8 stations &middot; 32 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big">ordinary</div><div class="lab">more stirred up than 60% of the last two days</div></div>
 <p class="lead">Eight small GPS antennas in the Reunion Island watch the water vapour above them, every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
 </div><div class="topr"><div id="map"></div>
@@ -195,7 +195,7 @@ x.globalAlpha=1; x.strokeStyle='#4338ca'; x.lineWidth=5; var tprov=t1+1; S.forEa
 tprov=Math.max(tprov,t1-1.5/24); var nmax=S.length; x.setLineDash([]); x.beginPath(); first=true; grid.forEach(function(tt,i){if(st[i]&&tt<=tprov&&st[i].n>=3){var px=X(tt),py=Y(st[i].med); first?x.moveTo(px,py):x.lineTo(px,py); first=false;} else first=true;}); x.stroke();
 x.setLineDash([6,6]); x.lineWidth=3.5; x.beginPath(); first=true; grid.forEach(function(tt,i){if(st[i]&&tt>=tprov-1e-6){var px=X(tt),py=Y(st[i].med); first?x.moveTo(px,py):x.lineTo(px,py); first=false;} else first=true;}); x.stroke(); x.setLineDash([]);
 var pk=-1,pi=-1; st.forEach(function(s,i){if(s&&s.n>=3&&grid[i]<=tprov&&s.med>pk){pk=s.med;pi=i;}});
-if(pi>=0){var pc=Math.round(100*all.filter(function(v){return v<pk;}).length/all.length); document.getElementById('peak').textContent=pc+'th percentile at '+hhmm(grid[pi])+' UTC'; x.fillStyle='#e11d48'; x.beginPath(); x.arc(X(grid[pi]),Y(pk),7,0,6.3); x.fill();}
+if(pi>=0){var pc=Math.round(100*all.filter(function(v){return v<pk;}).length/all.length); document.getElementById('peak').textContent=(function(n){var v=n-100*Math.floor(n/100),u=n-10*Math.floor(n/10);return n+((v>=11&&v<=13)?'th':(u==1?'st':(u==2?'nd':(u==3?'rd':'th'))));})(pc)+' percentile at '+hhmm(grid[pi])+' UTC'; x.fillStyle='#e11d48'; x.beginPath(); x.arc(X(grid[pi]),Y(pk),7,0,6.3); x.fill();}
 function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, top=46, mb=34;
  var g=stats(key), vals=g.filter(function(s){return s;}).map(function(s){return s.med;});
  var sv=vals.slice().sort(function(p,q){return p-q;}), l2=sv[Math.floor(sv.length*0.02)], h2=sv[Math.floor(sv.length*0.98)];
