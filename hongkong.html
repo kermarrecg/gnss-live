@@ -36,7 +36,7 @@ a{color:#4338ca}
 </style></head><body>
 <h1>Is the air over the Hong Kong</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="index.html">the Cevennes, southern France</a> &middot; <a href="reunion.html">La Reunion, tropical convection</a> &middot; <a href="japan.html">Japan, Tsukuba and the Seto Sea</a></div>
-<div class="sub">air state at 11 Oct 22:33, computed 11 Oct 22:56 &middot; 8 stations &middot; 24 min old</div>
+<div class="sub">air state at 11 Oct 22:33, computed 11 Oct 22:56 &middot; 8 stations &middot; 25 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big">ordinary</div><div class="lab">more stirred up than 71% of the last two days</div></div>
 <p class="lead">Eight small GPS antennas in the Hong Kong</p>
 </div><div class="topr"><div id="map"></div>
@@ -136,6 +136,8 @@ a{color:#4338ca}
 <h2>The two observables behind the index</h2>
 <canvas id="c2" width="900" height="170"></canvas>
 <canvas id="c3" width="900" height="170"></canvas>
+<p class="lead" style="margin:14px 0 4px"><b>Change over the last 6 h: 44th percentile, the index is falling faster than in 56% of the last two days</b></p>
+<canvas id="c4" width="900" height="170"></canvas>
 <div class="guide">
 <p><b>What is measured.</b> Zenith wet delay (ZWD) at 30 s from PRIDE PPP-AR with real-time GFZ orbit and clock corrections (Galileo excluded: the receivers observe it on C1X/C5X, for which no consistent code biases exist). The ZWD fluctuation spectrum in sliding 62.5-minute windows is fitted with a Mat&eacute;rn model, giving a decorrelation rate &lambda; (small &lambda; = long-lived moisture structures) and an amplitude &sigma;.</p>
 <p><b>The index.</b> Each parameter is turned into a causal anomaly z, its departure from the antenna's own past two days in units of that past's interquartile range, never using the future. The index is z(1/&lambda;) + z(&sigma;): it rises when structures grow longer-lived and fluctuations grow stronger at the same time. The cluster value is the median across antennas, and the percentile places it within the last hours.</p>
