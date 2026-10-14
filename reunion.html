@@ -36,7 +36,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </style></head><body>
 <h1>Is the air over the Reunion Island getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="index.html">the Cevennes, southern France</a> &middot; <a href="japan.html">Japan, Tsukuba and the Seto Sea</a> &middot; <a href="hongkong.html">Hong Kong, typhoon season</a></div>
-<div class="sub">air state at 13 Oct 22:09, computed 13 Oct 23:57 &middot; 8 stations &middot; 111 min old</div>
+<div class="sub">air state at 13 Oct 22:09, computed 13 Oct 23:57 &middot; 8 stations &middot; 113 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big">ordinary</div><div class="lab">calmer than 55% of the past 8 days at this time of day</div></div>
 <p class="lead">Eight small GPS antennas in the Reunion Island watch the water vapour above them, every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
 </div><div class="topr"><div id="map"></div>
@@ -226,7 +226,7 @@ for(var tl=Math.ceil(T0*4)/4;tl<=T1+1e-9;tl+=0.25){var lx=XX(tl); xx.beginPath()
  var dd=new Date(Math.round((tl-40587)*86400000)), hh=dd.getUTCHours(); var lab=hh===0?(('0'+dd.getUTCDate()).slice(-2)+'/'+('0'+(dd.getUTCMonth()+1)).slice(-2)):(('0'+hh).slice(-2)+':00'); xx.fillText(lab,lx,h-8);}
 xx.strokeStyle='#334155'; xx.lineWidth=1.5; xx.beginPath(); xx.moveTo(m,YY(0)); xx.lineTo(w-10,YY(0)); xx.stroke(); xx.textAlign='right'; xx.fillStyle='#334155'; xx.fillText('0',m-6,YY(0)+4);
 xx.strokeStyle='#c2410c'; xx.lineWidth=2; xx.setLineDash([6,6]); xx.beginPath(); xx.moveTo(m,YY(D.q90)); xx.lineTo(w-10,YY(D.q90)); xx.stroke(); xx.setLineDash([]);
-xx.strokeStyle='#0f766e'; xx.lineWidth=3; xx.beginPath(); var pt=null; D.t.forEach(function(t,i){if(t<T0) return; var px=XX(t),py=YY(D.n[i]); if(pt===null||t-pt>1/24+1e-6){xx.stroke(); xx.beginPath(); xx.moveTo(px,py);} else xx.lineTo(px,py); pt=t;}); xx.stroke();
+xx.strokeStyle='#2f5d8a'; xx.lineWidth=3; xx.beginPath(); var pt=null; D.t.forEach(function(t,i){if(t<T0) return; var px=XX(t),py=YY(D.n[i]); if(pt===null||t-pt>1/24+1e-6){xx.stroke(); xx.beginPath(); xx.moveTo(px,py);} else xx.lineTo(px,py); pt=t;}); xx.stroke();
 if(D.now[1]!==null){xx.fillStyle='#c2410c'; xx.beginPath(); xx.arc(XX(D.now[0]),YY(D.now[1]),7,0,6.3); xx.fill();}
 }catch(e){xx.fillStyle='#c2410c'; xx.font='600 15px system-ui'; xx.textAlign='left'; xx.fillText('panel error: '+e.message,64,h/2);}
 })();
