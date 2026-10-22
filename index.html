@@ -36,7 +36,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </style></head><body>
 <h1>Is the air over the Cevennes getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="reunion.html">La Reunion, tropical convection</a> &middot; <a href="japan.html">Japan, Tsukuba and the Seto Sea</a> &middot; <a href="hongkong.html">Hong Kong, typhoon season</a></div>
-<div class="sub">air state at 22 Oct 19:54, computed 22 Oct 20:17 &middot; 2 stations &middot; 26 min old</div>
+<div class="sub">air state at 22 Oct 19:59, computed 22 Oct 20:22 &middot; 2 stations &middot; 26 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 12 of 48 h</span></div><div class="lab">more stirred up than 100% of the past 8 days at this time of day</div></div>
 <p class="lead">Eight small GPS antennas in the Cevennes watch the water vapour above them, every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
 </div><div class="topr"><div id="map"></div>
@@ -149,8 +149,8 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 var M=[{n:'MTP2',lab:'Montpellier',la:43.6390,lo:3.8640,c:99},
-{n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:100}], S=[{n:'MTP2',t:[61335.33316,61335.33663,61335.77413,61335.77760,61335.78108,61335.78455,61335.78802,61335.79149,61335.79497,61335.79844,61335.80191,61335.80538,61335.80885,61335.81233,61335.81580,61335.81927,61335.82274,61335.82622,61335.82969],v:[-0.972,-0.284,-3.022,-1.822,-1.436,-1.649,-1.255,-0.332,0.030,1.203,2.274,2.187,2.464,2.538,2.725,3.248,3.075,0.145,3.310],l:[-0.365,0.085,-1.944,-0.925,-0.623,-0.796,-0.708,-0.083,0.193,0.317,0.713,0.793,0.898,0.905,0.891,1.032,0.953,-0.407,1.003],s:[-0.608,-0.369,-1.078,-0.897,-0.813,-0.854,-0.547,-0.250,-0.163,0.886,1.562,1.394,1.566,1.633,1.834,2.215,2.122,0.552,2.307],p:[0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]},
-{n:'ALES',t:[61335.77413,61335.77760,61335.78108,61335.78455,61335.78802,61335.79149,61335.79497,61335.79844,61335.80191,61335.80538,61335.80885,61335.81233,61335.81580,61335.81927,61335.82274,61335.82622,61335.82969],v:[-1.140,-0.133,0.669,1.090,1.312,1.517,1.130,3.441,5.738,5.969,6.517,6.868,7.032,7.065,6.817,4.592,5.856],l:[-0.473,0.077,0.573,0.779,0.865,0.910,0.554,0.656,1.292,1.394,1.439,1.408,1.382,1.456,1.368,0.851,1.189],s:[-0.667,-0.210,0.097,0.311,0.448,0.608,0.577,2.785,4.445,4.576,5.078,5.460,5.650,5.609,5.448,3.741,4.667],p:[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]}];
+{n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:100}], S=[{n:'MTP2',t:[61335.33316,61335.33663,61335.77413,61335.77760,61335.78108,61335.78455,61335.78802,61335.79149,61335.79497,61335.79844,61335.80191,61335.80538,61335.80885,61335.81233,61335.81580,61335.81927,61335.82274,61335.82622,61335.82969,61335.83316],v:[-0.972,-0.284,-3.101,-1.787,-1.367,-1.609,-1.509,-0.627,-0.227,0.853,1.839,2.371,1.968,1.982,2.193,2.585,2.563,2.586,0.803,3.547],l:[-0.365,0.085,-2.019,-0.905,-0.576,-0.766,-0.900,-0.277,0.030,0.246,0.643,0.819,0.815,0.795,0.814,0.942,0.857,1.008,0.225,1.562],s:[-0.608,-0.369,-1.082,-0.882,-0.791,-0.843,-0.608,-0.350,-0.257,0.607,1.196,1.553,1.153,1.187,1.379,1.643,1.707,1.578,0.578,1.985],p:[0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]},
+{n:'ALES',t:[61335.77413,61335.77760,61335.78108,61335.78455,61335.78802,61335.79149,61335.79497,61335.79844,61335.80191,61335.80538,61335.80885,61335.81233,61335.81580,61335.81927,61335.82274,61335.82622,61335.82969,61335.83316],v:[-1.252,-0.145,0.671,1.021,1.118,1.184,1.178,2.076,5.091,6.670,6.043,6.133,6.213,6.517,6.387,6.460,3.975,3.739],l:[-0.568,0.054,0.566,0.755,0.797,0.783,0.809,-0.108,0.925,1.120,1.081,0.975,0.930,1.045,0.935,0.993,0.427,0.255],s:[-0.683,-0.199,0.105,0.266,0.321,0.400,0.369,2.185,4.166,5.551,4.962,5.158,5.283,5.472,5.452,5.467,3.548,3.485],p:[0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]}];
 var map=L.map('map',{scrollWheelZoom:false}).setView([44.0,3.9],8);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:12,attribution:'&copy; OpenStreetMap'}).addTo(map);
 M.forEach(function(m){var c=m.c<75?'#4338ca':(m.c<90?'#818cf8':'#c2410c');
@@ -201,7 +201,7 @@ function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) r
 panel('c2','l','#4338ca','moisture structures live longer (larger 1/\u03bb)');
 panel('c3','s','#c2410c','the signal trembles more (larger \u03c3)');
 });
-;(function(){var D={"t": [], "n": [], "q90": 1.187682952844241, "t0": 61333.82968749989, "t1": 61335.82968749989, "now": [61335.80190972189, null]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
+;(function(){var D={"t": [], "n": [], "q90": 1.187682952844241, "t0": 61333.83315972189, "t1": 61335.83315972189, "now": [61335.80538194489, null]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
 try{var T0=(typeof t0!=='undefined')?t0:D.t0, T1=(typeof t1!=='undefined')?t1:D.t1;
 xx.fillStyle='#334155'; xx.font='600 16px system-ui'; xx.textAlign='left'; xx.fillText('Change over 6 h: index minus its median of the previous 6 h (dashed: 90th percentile at this time of day)',m,18);
 if(!D.t.length){xx.fillText('not enough data yet',m,h/2); return;}
