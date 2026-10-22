@@ -9,7 +9,7 @@ h1{font-size:42px;margin:0 0 8px;line-height:1.15;letter-spacing:-0.01em}
 h2{font-size:26px;margin:34px 0 10px}
 .sub{font-size:18px;color:#64748b;margin-bottom:22px}
 .state{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin:6px 0 4px}
-.big{font-size:88px;font-weight:800;line-height:1;color:#c0392b;letter-spacing:-0.02em}
+.big{font-size:88px;font-weight:800;line-height:1;color:#1f4e9a;letter-spacing:-0.02em}
 .lab{font-size:28px;color:#334155}
 .lead{font-size:22px;color:#334155;margin:14px 0 26px;max-width:820px}
 .card{background:linear-gradient(180deg,#eef2ff 0%,#ffffff 100%);border-radius:18px;padding:16px 18px 10px;box-shadow:0 8px 24px rgba(15,23,42,.10);margin:8px 0 18px}
@@ -36,8 +36,8 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </style></head><body>
 <h1>Is the air over the Cevennes getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="reunion.html">La Reunion, tropical convection</a> &middot; <a href="japan.html">Japan, Tsukuba and the Seto Sea</a> &middot; <a href="hongkong.html">Hong Kong, typhoon season</a></div>
-<div class="sub">air state at 22 Oct 20:24, computed 22 Oct 20:47 &middot; 2 stations &middot; 22 min old</div>
-<div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 12 of 48 h</span></div><div class="lab">more stirred up than 96% of the past 8 days at this time of day</div></div>
+<div class="sub">air state at 22 Oct 20:29, computed 22 Oct 20:51 &middot; 2 stations &middot; 22 min old</div>
+<div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 13 of 48 h</span></div><div class="lab">more stirred up than 57% of the past 8 days at this time of day</div></div>
 <p class="lead">Eight small GPS antennas in the Cevennes watch the water vapour above them, every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
 </div><div class="topr"><div id="map"></div>
 <div class="legend">Each marker is one antenna, coloured by its own state.
@@ -47,7 +47,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </div></div>
 <h2 style="margin-top:18px">The last two days, all eight antennas together</h2>
 <canvas id="c" width="900" height="320"></canvas>
-<div class="cap">Thick line: what the group of antennas agrees on. Each point sits at the end of its one-hour window, the moment it becomes known. Shaded band: how much they disagree. Thin lines: each antenna alone. Time in UTC, last 48 h. The percentile scale is built on 12 h of measurements: below 36 h it is not yet a fair comparison.</div>
+<div class="cap">Thick line: what the group of antennas agrees on. Each point sits at the end of its one-hour window, the moment it becomes known. Shaded band: how much they disagree. Thin lines: each antenna alone. Time in UTC, last 48 h. The percentile scale is built on 13 h of measurements: below 36 h it is not yet a fair comparison.</div>
 <div class="peak">Most organised moment of the past 8 days at this time of day: <b id="peak">&hellip;</b>. The first Cévennes episode of the autumn (29 September to 1 October) is now behind this network. The index reacts to the reorganisation of the boundary layer, not to the rain itself.</div>
 <h2>How the measurement works</h2>
 <div class="card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
@@ -148,9 +148,9 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </details>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-var M=[{n:'MTP2',lab:'Montpellier',la:43.6390,lo:3.8640,c:90},
-{n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:99}], S=[{n:'MTP2',t:[61335.33316,61335.33663,61335.77413,61335.77760,61335.78108,61335.78455,61335.78802,61335.79149,61335.79497,61335.79844,61335.80191,61335.80538,61335.80885,61335.81233,61335.81580,61335.81927,61335.82274,61335.82622,61335.82969,61335.83316,61335.83663,61335.84010,61335.84358,61335.84705],v:[-0.972,-0.284,-4.049,-2.832,-2.381,-2.539,-2.496,-1.643,-1.164,-0.627,0.217,0.654,0.795,0.725,0.861,0.968,-0.048,-1.133,0.012,3.021,1.999,2.739,1.605,2.101],l:[-0.365,0.085,-2.864,-1.759,-1.370,-1.516,-1.635,-0.976,-0.599,-0.342,0.134,0.353,0.441,0.354,0.379,0.402,0.047,-0.633,-0.118,1.499,0.996,1.465,1.072,1.308],s:[-0.608,-0.369,-1.186,-1.073,-1.011,-1.024,-0.861,-0.667,-0.565,-0.285,0.083,0.302,0.354,0.372,0.483,0.566,-0.095,-0.500,0.131,1.522,1.003,1.274,0.534,0.793],p:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]},
-{n:'ALES',t:[61335.77413,61335.77760,61335.78108,61335.78455,61335.78802,61335.79149,61335.79497,61335.79844,61335.80191,61335.80538,61335.80885,61335.81233,61335.81580,61335.81927,61335.82274,61335.82622,61335.82969,61335.83316,61335.83663,61335.84010,61335.84358,61335.84705,61335.85052],v:[-1.383,-0.387,0.289,0.380,0.036,-0.405,-0.985,-0.970,1.533,2.093,1.885,1.478,1.517,1.996,2.415,1.467,1.554,1.063,-0.190,1.060,0.342,-2.440,-2.520],l:[-0.712,-0.179,0.273,0.370,0.143,-0.163,-0.559,-0.771,0.748,0.946,0.804,0.588,0.586,0.907,1.143,0.912,1.041,0.772,0.006,0.945,0.310,-1.625,-1.713],s:[-0.671,-0.208,0.016,0.010,-0.107,-0.242,-0.426,-0.199,0.785,1.147,1.081,0.890,0.931,1.089,1.272,0.556,0.514,0.290,-0.196,0.115,0.032,-0.815,-0.807],p:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]}];
+var M=[{n:'MTP2',lab:'Montpellier',la:43.6390,lo:3.8640,c:13},
+{n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:91}], S=[{n:'MTP2',t:[61335.33316,61335.33663,61335.77413,61335.77760,61335.78108,61335.78455,61335.78802,61335.79149,61335.79497,61335.79844,61335.80191,61335.80538,61335.80885,61335.81233,61335.81580,61335.81927,61335.82274,61335.82622,61335.82969,61335.83316,61335.83663,61335.84010,61335.84358,61335.84705,61335.85052,61335.85399],v:[-0.972,-0.284,-4.470,-3.696,-3.483,-2.901,-2.450,-1.373,-0.748,-0.420,-0.127,0.191,0.408,0.517,0.849,0.941,0.490,-1.959,-2.308,1.721,1.224,1.323,1.473,2.137,0.959,1.346],l:[-0.365,0.085,-3.223,-2.488,-2.331,-1.841,-1.667,-0.852,-0.408,-0.226,-0.097,0.067,0.206,0.198,0.333,0.342,0.068,-1.476,-1.462,1.087,0.691,0.871,0.796,1.090,0.589,0.850],s:[-0.608,-0.369,-1.246,-1.207,-1.152,-1.060,-0.783,-0.522,-0.340,-0.194,-0.030,0.124,0.201,0.319,0.515,0.599,0.422,-0.483,-0.846,0.634,0.533,0.452,0.677,1.047,0.370,0.496],p:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]},
+{n:'ALES',t:[61335.77413,61335.77760,61335.78108,61335.78455,61335.78802,61335.79149,61335.79497,61335.79844,61335.80191,61335.80538,61335.80885,61335.81233,61335.81580,61335.81927,61335.82274,61335.82622,61335.82969,61335.83316,61335.83663,61335.84010,61335.84358,61335.84705,61335.85052,61335.85399],v:[-1.432,-0.475,0.149,0.149,-0.169,-0.574,-1.058,-1.353,0.900,1.330,1.057,0.664,0.721,1.022,1.419,1.214,0.617,0.477,-0.342,-0.582,-2.553,-3.840,-6.412,-8.844],l:[-0.742,-0.241,0.176,0.204,0.000,-0.293,-0.627,-0.987,0.491,0.673,0.487,0.267,0.278,0.574,0.864,0.755,0.682,0.565,0.055,0.034,-1.735,-2.920,-5.108,-7.743],s:[-0.690,-0.234,-0.027,-0.055,-0.170,-0.280,-0.431,-0.366,0.409,0.657,0.570,0.397,0.443,0.449,0.554,0.459,-0.066,-0.088,-0.397,-0.617,-0.819,-0.920,-1.304,-1.101],p:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]}];
 var map=L.map('map',{scrollWheelZoom:false}).setView([44.0,3.9],8);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:12,attribution:'&copy; OpenStreetMap'}).addTo(map);
 M.forEach(function(m){var c=m.c<75?'#4338ca':(m.c<90?'#818cf8':'#c2410c');
@@ -201,7 +201,7 @@ function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) r
 panel('c2','l','#4338ca','moisture structures live longer (larger 1/\u03bb)');
 panel('c3','s','#c2410c','the signal trembles more (larger \u03c3)');
 });
-;(function(){var D={"t": [], "n": [], "q90": 1.1321578900314377, "t0": 61333.85052083289, "t1": 61335.85052083289, "now": [61335.82274305589, null]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
+;(function(){var D={"t": [], "n": [], "q90": 1.136185851822867, "t0": 61333.85399305589, "t1": 61335.85399305589, "now": [61335.82621527789, null]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
 try{var T0=(typeof t0!=='undefined')?t0:D.t0, T1=(typeof t1!=='undefined')?t1:D.t1;
 xx.fillStyle='#334155'; xx.font='600 16px system-ui'; xx.textAlign='left'; xx.fillText('Change over 6 h: index minus its median of the previous 6 h (dashed: 90th percentile at this time of day)',m,18);
 if(!D.t.length){xx.fillText('not enough data yet',m,h/2); return;}
