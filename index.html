@@ -36,7 +36,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </style></head><body>
 <h1>Is the air over the Cevennes getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="reunion.html">La Reunion, tropical convection</a> &middot; <a href="japan.html">Japan, Tsukuba and the Seto Sea</a> &middot; <a href="hongkong.html">Hong Kong, typhoon season</a></div>
-<div class="sub">air state at 23 Oct 12:09, computed 23 Oct 12:34 &middot; 7 stations &middot; 24 min old</div>
+<div class="sub">air state at 23 Oct 12:09, computed 23 Oct 12:34 &middot; 7 stations &middot; 28 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 28 of 48 h</span></div><div class="lab">more stirred up than 84% of the past 8 days at this time of day</div></div>
 <p class="lead">Eight small GPS antennas in the Cevennes watch the water vapour above them, every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
 </div><div class="topr"><div id="map"></div>
@@ -150,7 +150,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 document.addEventListener('DOMContentLoaded', function () {
 var M=[{n:'AIGL',lab:'Mont Aigoual',la:44.1200,lo:3.5800,c:81},
 {n:'MTP2',lab:'Montpellier',la:43.6390,lo:3.8640,c:39},
-{n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:86},
+{n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:85},
 {n:'DIA1',lab:'Mauguio',la:43.6100,lo:3.9770,c:59},
 {n:'HOLA',lab:'Hospitalet',la:43.9700,lo:3.2200,c:84},
 {n:'SAUV',lab:'Issirac',la:44.2550,lo:4.4670,c:85},
@@ -211,7 +211,7 @@ function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) r
 panel('c2','l','#4338ca','moisture structures live longer (larger 1/\u03bb)');
 panel('c3','s','#c2410c','the signal trembles more (larger \u03c3)');
 });
-;(function(){var D={"t": [61335.89583333431, 61335.91666666765, 61335.93750000098, 61335.95833333432, 61335.979166667654, 61336.00000000099, 61336.020833334325, 61336.04166666766, 61336.062500001, 61336.08333333433, 61336.10416666767, 61336.125000001004, 61336.14583333434, 61336.166666667676, 61336.18750000101, 61336.20833333435, 61336.22916666768, 61336.25000000102, 61336.270833334354, 61336.29166666769, 61336.312500001026, 61336.33333333436, 61336.3541666677, 61336.37500000103, 61336.39583333437, 61336.416666667705, 61336.43750000104, 61336.458333334376, 61336.47916666771], "n": [0.961, 0.795, 0.867, 0.037, -0.056, 0.287, 0.111, -0.023, 0.52, 0.226, 0.84, 0.693, 0.371, -0.289, 0.968, -0.128, 0.699, 1.348, -0.383, -0.714, -1.199, -0.186, 0.088, -0.486, 1.302, 1.65, 1.003, -0.038, 0.761], "q90": 1.234228870188476, "t0": 61334.50642361089, "t1": 61336.50642361089, "now": [61336.48072916689, 0.724]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
+;(function(){var D={"t": [61335.89583333431, 61335.91666666765, 61335.93750000098, 61335.95833333432, 61335.979166667654, 61336.00000000099, 61336.020833334325, 61336.04166666766, 61336.062500001, 61336.08333333433, 61336.10416666767, 61336.125000001004, 61336.14583333434, 61336.166666667676, 61336.18750000101, 61336.20833333435, 61336.22916666768, 61336.25000000102, 61336.270833334354, 61336.29166666769, 61336.312500001026, 61336.33333333436, 61336.3541666677, 61336.37500000103, 61336.39583333437, 61336.416666667705, 61336.43750000104, 61336.458333334376, 61336.47916666771], "n": [0.961, 0.795, 0.867, 0.037, -0.056, 0.287, 0.111, -0.023, 0.52, 0.226, 0.84, 0.693, 0.371, -0.289, 0.968, -0.128, 0.699, 1.348, -0.383, -0.714, -1.199, -0.186, 0.088, -0.486, 1.302, 1.65, 1.003, -0.038, 0.761], "q90": 1.2409263370020849, "t0": 61334.50642361089, "t1": 61336.50642361089, "now": [61336.48072916689, 0.724]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
 try{var T0=(typeof t0!=='undefined')?t0:D.t0, T1=(typeof t1!=='undefined')?t1:D.t1;
 xx.fillStyle='#334155'; xx.font='600 16px system-ui'; xx.textAlign='left'; xx.fillText('Change over 6 h: index minus its median of the previous 6 h (dashed: 90th percentile at this time of day)',m,18);
 if(!D.t.length){xx.fillText('not enough data yet',m,h/2); return;}
