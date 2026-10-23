@@ -36,7 +36,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </style></head><body>
 <h1>Is the air over the Hong Kong</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="index.html">the Cevennes, southern France</a> &middot; <a href="reunion.html">La Reunion, tropical convection</a> &middot; <a href="japan.html">Japan, Tsukuba and the Seto Sea</a></div>
-<div class="sub">air state at 23 Oct 11:14, computed 23 Oct 11:44 &middot; 8 stations &middot; 38 min old</div>
+<div class="sub">air state at 23 Oct 11:14, computed 23 Oct 11:44 &middot; 8 stations &middot; 39 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 28 of 48 h</span></div><div class="lab">more stirred up than 60% of the past 8 days at this time of day</div></div>
 <p class="lead">Eight small GPS antennas in the Hong Kong</p>
 </div><div class="topr"><div id="map"></div>
@@ -149,7 +149,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 var M=[{n:'HKNP',lab:'Ngong Ping',la:22.2500,lo:113.8900,c:56},
-{n:'HKMW',lab:'Mui Wo',la:22.2600,lo:114.0000,c:68},
+{n:'HKMW',lab:'Mui Wo',la:22.2600,lo:114.0000,c:69},
 {n:'HKLM',lab:'Lamma Island',la:22.2200,lo:114.1200,c:63},
 {n:'HKSC',lab:'Stonecutters',la:22.3200,lo:114.1400,c:57},
 {n:'HKST',lab:'Sha Tin',la:22.3900,lo:114.1800,c:76},
@@ -179,7 +179,7 @@ function axis(x,W,H,ML,MR,MB,lo,hi,fmt){x.strokeStyle='#e2e8f0';x.lineWidth=1;x.
 var st=stats('v');
 var c=document.getElementById('c'), x=c.getContext('2d');
 var W=c.width,H=c.height,ML=64,MR=18,MT=18,MB=36;
-var SUS=[61329.45486,61329.45833,61329.46181,61329.48611]; function isSus(t){for(var q=0;q<SUS.length;q++){if(Math.abs(t-SUS[q])<1/576)return true;}return false;}
+var SUS=[61329.45486,61329.45833,61329.46181]; function isSus(t){for(var q=0;q<SUS.length;q++){if(Math.abs(t-SUS[q])<1/576)return true;}return false;}
 var all=[].concat.apply([],S.map(function(s){return s.t?s.v.filter(function(v,j){return !isSus(s.t[j]);}):s.v;}));
 var lo=Math.min.apply(null,all), hi=Math.max.apply(null,all);
 function X(tt){return ML+(W-ML-MR)*(tt-t0)/((t1-t0)||1);}
