@@ -36,7 +36,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </style></head><body>
 <h1>Is the air over the Cevennes getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="reunion.html">La Reunion, tropical convection</a> &middot; <a href="japan.html">Japan, Tsukuba and the Seto Sea</a> &middot; <a href="hongkong.html">Hong Kong, typhoon season</a></div>
-<div class="sub">air state at 29 Oct 09:32, computed 29 Oct 09:56 &middot; 7 stations &middot; 24 min old</div>
+<div class="sub">air state at 29 Oct 09:32, computed 29 Oct 09:56 &middot; 7 stations &middot; 31 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big">ordinary</div><div class="lab">calmer than 65% of the past 8 days at this time of day</div></div>
 <p class="lead">Eight small GPS antennas in the Cevennes watch the water vapour above them, every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the last two days.</p>
 </div><div class="topr"><div id="map"></div>
@@ -45,9 +45,9 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 <span class="dot" style="background:#818cf8"></span>high
 <span class="dot" style="background:#d97706"></span>extreme</div>
 </div></div>
-<h2 style="margin-top:18px">The last two days, all eight antennas together</h2>
-<canvas id="c" width="900" height="320"></canvas>
-<div class="cap">Thick line: what the group of antennas agrees on. Each point sits at the end of its one-hour window, the moment it becomes known. Shaded band: how much they disagree. Thin lines: each antenna alone. Time in UTC, last 48 h. The percentile scale is built on 49 h of measurements: below 36 h it is not yet a fair comparison.</div>
+<h2 style="margin-top:18px">The last two days, all antennas together</h2>
+<canvas id="c" width="900" height="350"></canvas>
+<div class="cap">Vertical axis: the index z(1/&lambda;) + z(&sigma;); 0 is the usual level of each antenna over the past two days. Thick line: what the group of antennas agrees on. Each point sits at the end of its one-hour window, the moment it becomes known. Shaded band: how much they disagree. Thin lines: each antenna alone. Time in UTC, last 48 h. The percentile scale is built on 49 h of measurements: below 36 h it is not yet a fair comparison.</div>
 <div class="peak">Most organised moment of the past 8 days at this time of day: <b id="peak">&hellip;</b>. The first Cévennes episode of the autumn (29 September to 1 October) is now behind this network. The index reacts to the reorganisation of the boundary layer, not to the rain itself.</div>
 <h2>How the measurement works</h2>
 <div class="card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
@@ -172,18 +172,18 @@ var grid=[]; for(var k=0;k<300;k++) grid.push(t0+(t1-t0)*k/299);
 function near(s,key,tt){var best=null,bd=1e9; for(var i=0;i<s.t.length;i++){var d=Math.abs(s.t[i]-tt); if(d<bd){bd=d;best=s[key][i];}} return bd<=TOL?best:null;}
 function stats(key){return grid.map(function(tt){var a=S.map(function(s){return near(s,key,tt);}).filter(function(v){return v!==null;}).sort(function(p,q){return p-q;}); if(!a.length) return null; var q=function(f){var i=(a.length-1)*f, lo=Math.floor(i), hi=Math.ceil(i); return a[lo]+(a[hi]-a[lo])*(i-lo);}; return {med:q(0.5),q1:q(0.25),q3:q(0.75),n:a.length};});}
 function hhmm(mjd){var d=new Date((mjd-40587)*86400000);return ('0'+d.getUTCHours()).slice(-2)+':'+('0'+d.getUTCMinutes()).slice(-2);}
-function axis(x,W,H,ML,MR,MB,lo,hi,fmt){x.strokeStyle='#e2e8f0';x.lineWidth=1;x.fillStyle='#64748b';x.font='600 15px system-ui';
- var pas=((t1-t0)*24>30)?6/24:3/24; for(var tt=Math.ceil(t0/pas)*pas;tt<=t1;tt+=pas){var px=ML+(W-ML-MR)*(tt-t0)/((t1-t0)||1); x.beginPath();x.moveTo(px,H-MB);x.lineTo(px,H-MB+5);x.stroke(); x.fillText(hhmm(tt),px-18,H-8);} x.fillText('UTC',W-MR+6,H-8);}
+function lbl(tt){var dd=new Date(Math.round((tt-40587)*1440)*60000), hh=dd.getUTCHours(), mi=dd.getUTCMinutes(); return (hh===0&&mi===0)?(('0'+dd.getUTCDate()).slice(-2)+'/'+('0'+(dd.getUTCMonth()+1)).slice(-2)):(('0'+hh).slice(-2)+':'+('0'+mi).slice(-2));} function axis(x,W,H,ML,MR,MB,lo,hi,fmt){x.strokeStyle='#e2e8f0';x.lineWidth=1;x.fillStyle='#64748b';x.font='600 15px system-ui';
+ var pas=((t1-t0)*24>30)?6/24:3/24; for(var tt=Math.ceil(t0/pas)*pas;tt<=t1;tt+=pas){var px=ML+(W-ML-MR)*(tt-t0)/((t1-t0)||1); x.beginPath();x.moveTo(px,H-MB);x.lineTo(px,H-MB+5);x.stroke(); x.textAlign='center'; x.fillText(lbl(tt),px,H-MB+22);} x.fillStyle='#334155'; x.font='700 15px system-ui'; x.fillText('Time (UTC)',ML+(W-ML-MR)/2,H-8); x.textAlign='left';}
 var st=stats('v');
 var c=document.getElementById('c'), x=c.getContext('2d');
-var W=c.width,H=c.height,ML=64,MR=18,MT=18,MB=36;
+var W=c.width,H=c.height,ML=88,MR=24,MT=18,MB=58;
 var all=[].concat.apply([],S.map(function(s){return s.v;}));
-var lo=Math.min.apply(null,all), hi=Math.max.apply(null,all);
+var srt=all.filter(function(v){return v!==null&&isFinite(v);}).sort(function(p,q){return p-q;}); var lo=Math.min(-2,srt[Math.floor(srt.length*0.01)]), hi=Math.max(2,srt[Math.floor(srt.length*0.995)]);
 function X(tt){return ML+(W-ML-MR)*(tt-t0)/((t1-t0)||1);}
 function Y(v){return H-MB-(H-MT-MB)*(v-lo)/((hi-lo)||1);}
 x.strokeStyle='#e2e8f0'; x.fillStyle='#64748b'; x.font='600 15px system-ui'; x.lineWidth=1;
-[0,25,50,75,100].forEach(function(p){var y=Y(lo+(hi-lo)*p/100); x.beginPath();x.moveTo(ML,y);x.lineTo(W-MR,y);x.stroke(); x.fillText(p+'th',6,y+5);});
-axis(x,W,H,ML,MR,MB,lo,hi);
+(function(){var sp=(hi-lo)>8?2:1; x.textAlign='right'; for(var v=Math.ceil(lo/sp)*sp; v<=hi+1e-9; v+=sp){var y=Y(v); x.strokeStyle=(v===0)?'#94a3b8':'#e2e8f0'; x.lineWidth=(v===0)?1.5:1; x.beginPath(); x.moveTo(ML,y); x.lineTo(W-MR,y); x.stroke(); x.fillText((v>0?'+':'')+v,ML-8,y+5);} x.lineWidth=1; x.save(); x.translate(18,(MT+H-MB)/2); x.rotate(-Math.PI/2); x.textAlign='center'; x.fillStyle='#334155'; x.font='700 15px system-ui'; x.fillText('Index  z(1/'+String.fromCharCode(955)+') + z('+String.fromCharCode(963)+')',0,0); x.restore(); x.textAlign='left'; x.strokeStyle='#e2e8f0'; x.fillStyle='#64748b'; x.font='600 15px system-ui';})();
+axis(x,W,H,ML,MR,MB,lo,hi); x.save(); x.beginPath(); x.rect(ML,MT-6,W-ML-MR,H-MT-MB+12); x.clip();
 x.fillStyle='rgba(67,56,202,0.16)'; var nmin=3, seg=[], cur=[];
 grid.forEach(function(tt,i){ if(st[i]&&st[i].n>=nmin) cur.push(i); else { if(cur.length>1) seg.push(cur); cur=[]; } });
 if(cur.length>1) seg.push(cur);
@@ -196,7 +196,7 @@ tprov=Math.max(tprov,t1-1.5/24); var nmax=S.length; x.setLineDash([]); x.beginPa
 x.setLineDash([6,6]); x.lineWidth=3.5; x.beginPath(); first=true; grid.forEach(function(tt,i){if(st[i]&&tt>=tprov-1e-6){var px=X(tt),py=Y(st[i].med); first?x.moveTo(px,py):x.lineTo(px,py); first=false;} else first=true;}); x.stroke(); x.setLineDash([]);
 var pk=-1,pi=-1; st.forEach(function(s,i){if(s&&s.n>=3&&grid[i]<=tprov&&s.med>pk){pk=s.med;pi=i;}});
 if(pi>=0){var pc=Math.round(100*all.filter(function(v){return v<pk;}).length/all.length); document.getElementById('peak').textContent=(function(n){var v=n-100*Math.floor(n/100),u=n-10*Math.floor(n/10);return n+((v>=11&&v<=13)?'th':(u==1?'st':(u==2?'nd':(u==3?'rd':'th'))));})(pc)+' percentile at '+hhmm(grid[pi])+' UTC'; x.fillStyle='#d97706'; x.beginPath(); x.arc(X(grid[pi]),Y(pk),7,0,6.3); x.fill();}
-function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, top=46, mb=34;
+x.restore(); function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, top=46, mb=34;
  var g=stats(key), vals=g.filter(function(s){return s;}).map(function(s){return s.med;});
  var sv=vals.slice().sort(function(p,q){return p-q;}), l2=sv[Math.floor(sv.length*0.02)], h2=sv[Math.floor(sv.length*0.98)];
  var sm=vals.map(function(v,i){var a=vals.slice(Math.max(0,i-2),i+3).sort(function(p,q){return p-q;}); return a[Math.floor(a.length/2)];});
@@ -206,14 +206,14 @@ function panel(id,key,color,label){var cc=document.getElementById(id); if(!cc) r
  g.forEach(function(s,i){if(s){f?xx.moveTo(PX(i),PY(s.q3)):xx.lineTo(PX(i),PY(s.q3)); f=false;}}); for(var i=g.length-1;i>=0;i--){if(g[i]) xx.lineTo(PX(i),PY(g[i].q1));} xx.closePath(); xx.fill();
  xx.strokeStyle=color; xx.lineWidth=4; xx.beginPath(); f=true;
  g.forEach(function(s,i){if(s){f?xx.moveTo(PX(i),PY(s.med)):xx.lineTo(PX(i),PY(s.med)); f=false;} else f=true;}); xx.stroke();
- xx.fillStyle='#0f172a'; xx.font='700 20px system-ui'; xx.fillText(label,m,26);
+ xx.fillStyle='#0f172a'; xx.font='700 20px system-ui'; xx.fillText(label,m,26); xx.save(); xx.translate(16,(top+h-mb)/2); xx.rotate(-Math.PI/2); xx.textAlign='center'; xx.fillStyle='#334155'; xx.font='700 14px system-ui'; xx.fillText(key==='l'?'z(1/'+String.fromCharCode(955)+')':'z('+String.fromCharCode(963)+')',0,0); xx.restore(); xx.textAlign='left';
  xx.fillStyle='#64748b'; xx.font='600 14px system-ui'; xx.textAlign='center'; for(var tl=Math.ceil(t0*4)/4;tl<=t1+1e-9;tl+=0.25){var lx=Math.min(m+(w-m-18)*(tl-t0)/((t1-t0)||1),w-24), dd=new Date((tl-40587)*86400000), lab=(hhmm(tl)==='00:00')?(('0'+dd.getUTCDate()).slice(-2)+'/'+('0'+(dd.getUTCMonth()+1)).slice(-2)):hhmm(tl); xx.fillText(lab,lx,h-8);} xx.textAlign='left'; xx.fillText('UTC',4,h-8);}
 panel('c2','l','#4338ca','moisture structures live longer (larger 1/\u03bb)');
 panel('c3','s','#d97706','the signal trembles more (larger \u03c3)');
 });
 ;(function(){var D={"t": [61340.35416666725, 61340.37500000059, 61340.395833333925, 61340.41666666726, 61340.4375000006, 61340.45833333393, 61340.47916666727, 61340.500000000604, 61340.52083333394, 61340.541666667275, 61340.56250000061, 61340.58333333395, 61340.60416666728, 61340.62500000062, 61340.645833333954, 61340.66666666729, 61340.687500000626, 61340.70833333396, 61340.7291666673, 61340.75000000063, 61340.77083333397, 61340.791666667305, 61340.81250000064, 61340.833333333976, 61340.85416666731, 61340.87500000065, 61340.89583333398, 61340.91666666732, 61340.937500000655, 61340.95833333399, 61340.979166667326, 61341.00000000066, 61341.020833334, 61341.04166666733, 61341.06250000067, 61341.083333334005, 61341.12500000068, 61341.14583333401, 61341.16666666735, 61341.187500000684, 61341.20833333402, 61341.229166667355, 61341.25000000069, 61341.27083333403, 61341.29166666736, 61341.3125000007, 61341.333333334034, 61341.35416666737, 61341.375000000706, 61341.39583333404, 61341.41666666738, 61341.43750000071, 61341.45833333405, 61341.479166667385, 61341.50000000072, 61341.520833334056, 61341.54166666739, 61341.56250000073, 61341.58333333406, 61341.6041666674, 61341.625000000735, 61341.729166667414, 61341.75000000075, 61341.770833334085, 61341.79166666742, 61341.81250000076, 61341.83333333409, 61341.85416666743, 61341.875000000764, 61341.8958333341, 61341.916666667435, 61341.93750000077, 61341.95833333411, 61341.97916666744, 61342.00000000078, 61342.020833334114, 61342.04166666745, 61342.062500000786, 61342.08333333412, 61342.10416666746, 61342.12500000079, 61342.14583333413, 61342.166666667465, 61342.1875000008, 61342.208333334136, 61342.22916666747, 61342.25000000081, 61342.27083333414, 61342.29166666748, 61342.312500000815, 61342.33333333415, 61342.35416666749], "n": [-0.137, -0.556, 0.359, 0.751, -1.087, -0.395, 1.177, 1.102, 1.304, 1.067, -0.14, -0.778, -0.416, -0.013, 0.062, -0.606, 0.204, -0.482, -0.775, 0.726, -1.326, 0.983, 0.825, -0.55, -0.223, 1.478, 0.598, 1.33, 0.57, -2.276, 0.368, 0.843, 0.053, 1.116, 0.953, -0.082, -0.472, 0.554, 1.364, 0.029, -1.112, 0.349, 0.1, -1.465, -0.799, -0.135, 0.283, -2.218, -1.65, 0.153, -0.447, -3.015, -2.241, -1.724, -0.285, 1.152, 0.92, 0.117, -0.298, 0.834, 0.602, -1.553, -0.691, 0.208, 1.65, -0.5, -1.816, -1.708, 0.201, 1.009, 1.454, 0.468, -1.057, 0.047, -0.159, 0.889, 0.51, 0.425, -0.464, -1.269, -0.881, -0.093, 0.328, -1.532, 0.289, 1.199, 0.772, -0.895, -1.439, 1.657, 2.81, -1.147], "q90": 1.450694855182359, "t0": 61340.39774305589, "t1": 61342.39774305589, "now": [61342.36996527789, -0.55]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
 try{var T0=(typeof t0!=='undefined')?t0:D.t0, T1=(typeof t1!=='undefined')?t1:D.t1;
-xx.fillStyle='#334155'; xx.font='600 16px system-ui'; xx.textAlign='left'; xx.fillText('Change over 6 h: index minus its median of the previous 6 h (dashed: 90th percentile at this time of day)',m,18);
+xx.fillStyle='#334155'; xx.font='600 16px system-ui'; xx.textAlign='left'; xx.fillText('Change over 6 h: index minus its median of the previous 6 h (dashed: 90th percentile at this time of day)',m,18); xx.save(); xx.translate(16,(mt+h-mb)/2); xx.rotate(-Math.PI/2); xx.textAlign='center'; xx.fillStyle='#334155'; xx.font='700 14px system-ui'; xx.fillText('index change',0,0); xx.restore(); xx.textAlign='left';
 if(!D.t.length){xx.fillText('not enough data yet',m,h/2); return;}
 var a=Math.abs(D.q90); D.n.forEach(function(v,i){if(D.t[i]>=T0) a=Math.max(a,Math.abs(v));}); a=a*1.15||1; var g=a/1.15;
 function XX(t){return m+(w-m-10)*(t-T0)/(T1-T0);} function YY(v){return mt+(h-mt-mb)*(1-(v+a)/(2*a));}
@@ -223,7 +223,7 @@ xx.textAlign='center'; xx.font='600 14px system-ui';
 for(var tl=Math.ceil(T0*4)/4;tl<=T1+1e-9;tl+=0.25){var lx=XX(tl); xx.beginPath(); xx.moveTo(lx,mt); xx.lineTo(lx,h-mb); xx.stroke();
  var dd=new Date(Math.round((tl-40587)*86400000)), hh=dd.getUTCHours(); var lab=hh===0?(('0'+dd.getUTCDate()).slice(-2)+'/'+('0'+(dd.getUTCMonth()+1)).slice(-2)):(('0'+hh).slice(-2)+':00'); xx.fillText(lab,lx,h-8);}
 xx.strokeStyle='#334155'; xx.lineWidth=1.5; xx.beginPath(); xx.moveTo(m,YY(0)); xx.lineTo(w-10,YY(0)); xx.stroke(); xx.textAlign='right'; xx.fillStyle='#334155'; xx.fillText('0',m-6,YY(0)+4);
-xx.strokeStyle='#d97706'; xx.lineWidth=2; xx.setLineDash([6,6]); xx.beginPath(); xx.moveTo(m,YY(D.q90)); xx.lineTo(w-10,YY(D.q90)); xx.stroke(); xx.setLineDash([]);
+xx.textAlign='left'; xx.fillStyle='#64748b'; xx.font='600 14px system-ui'; xx.fillText('UTC',4,h-8); xx.strokeStyle='#d97706'; xx.lineWidth=2; xx.setLineDash([6,6]); xx.beginPath(); xx.moveTo(m,YY(D.q90)); xx.lineTo(w-10,YY(D.q90)); xx.stroke(); xx.setLineDash([]);
 xx.strokeStyle='#2f5d8a'; xx.lineWidth=3; xx.beginPath(); var pt=null; D.t.forEach(function(t,i){if(t<T0) return; var px=XX(t),py=YY(D.n[i]); if(pt===null||t-pt>1/24+1e-6){xx.stroke(); xx.beginPath(); xx.moveTo(px,py);} else xx.lineTo(px,py); pt=t;}); xx.stroke();
 if(D.now[1]!==null){xx.fillStyle='#d97706'; xx.beginPath(); xx.arc(XX(D.now[0]),YY(D.now[1]),7,0,6.3); xx.fill();}
 }catch(e){xx.fillStyle='#d97706'; xx.font='600 15px system-ui'; xx.textAlign='left'; xx.fillText('panel error: '+e.message,64,h/2);}
