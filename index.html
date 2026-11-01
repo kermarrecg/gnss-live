@@ -38,8 +38,8 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </style></head><body>
 <h1>Is the air over the C&eacute;vennes getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="reunion.html">R&eacute;union Island</a> &middot; <a href="japan.html">Kanto, Japan</a> &middot; <a href="hongkong.html">Hong Kong</a></div>
-<div class="sub">air state at 01 Nov 18:21, computed 01 Nov 18:44 &middot; 6 stations &middot; 22 min old</div>
-<div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 6 of 48 h</span></div><div class="lab">more stirred up than 57% of the past 8 days at this time of day</div></div>
+<div class="sub">air state at 01 Nov 18:21, computed 01 Nov 18:44 &middot; 6 stations &middot; 26 min old</div>
+<div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 6 of 48 h</span></div><div class="lab">more stirred up than 58% of the past 8 days at this time of day</div></div>
 <p class="lead">Eight small GPS antennas of the community-run Centipede network, from the C&eacute;vennes to the Mediterranean coast, watch the water vapour above them every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the same time of day over the past 8 days.</p>
 </div><div class="topr"><div id="map"></div>
 <div class="legend">Each marker is one antenna, coloured by its own percentile at this time of day:<br>
@@ -153,11 +153,11 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </details>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-var M=[{n:'MTP2',lab:'Montpellier',la:43.6390,lo:3.8640,c:71},
-{n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:52},
+var M=[{n:'MTP2',lab:'Montpellier',la:43.6390,lo:3.8640,c:72},
+{n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:53},
 {n:'DIA1',lab:'Mauguio',la:43.6100,lo:3.9770,c:83},
-{n:'HOLA',lab:'Hospitalet',la:43.9700,lo:3.2200,c:14},
-{n:'SAUV',lab:'Issirac',la:44.2550,lo:4.4670,c:61},
+{n:'HOLA',lab:'Hospitalet',la:43.9700,lo:3.2200,c:15},
+{n:'SAUV',lab:'Issirac',la:44.2550,lo:4.4670,c:62},
 {n:'CUMAS',lab:'St-Jean-de-Maruejol',la:44.2630,lo:4.2870,c:42},
 {n:'AIGL',lab:'Mont Aigoual',la:44.1200,lo:3.5800,c:-1},
 {n:'SLVT',lab:'La Salvetat',la:43.9200,lo:3.2700,c:-1}], S=[{n:'MTP2',t:[61345.49774,61345.50122,61345.50469,61345.50816,61345.51163,61345.51510,61345.51858,61345.52205,61345.52552,61345.52899,61345.53247,61345.53594,61345.53941,61345.54288,61345.54635,61345.54983,61345.55330,61345.55677,61345.56024,61345.56372,61345.56719,61345.57066,61345.57413,61345.57760,61345.58108,61345.58455,61345.58802,61345.59149,61345.59497,61345.59844,61345.60191,61345.60538,61345.60885,61345.61233,61345.61580,61345.61927,61345.62274,61345.62622,61345.62969,61345.63316,61345.63663,61345.64010,61345.64358,61345.64705,61345.65052,61345.65399,61345.65747,61345.66094,61345.66441,61345.66788,61345.67135,61345.67483,61345.67830,61345.68177,61345.68524,61345.68872,61345.69219,61345.69566,61345.69913,61345.70260,61345.70608,61345.70955,61345.71302,61345.71649,61345.71997,61345.72344,61345.72691,61345.73038,61345.73385,61345.73733,61345.74080,61345.74427,61345.74774,61345.75122,61345.75469,61345.75816,61345.76163,61345.76510],v:[-0.029,0.171,-0.015,-0.546,-0.420,-0.697,-0.208,0.483,0.042,-0.938,-1.603,-1.537,-1.204,-1.148,-1.196,-1.301,-1.922,-2.468,-2.910,-3.440,-3.325,-3.462,-3.623,-5.027,-6.189,-5.523,-6.193,-4.815,-4.623,-3.925,-2.968,-2.467,-2.380,-2.662,-2.980,-2.496,-2.082,-1.941,-1.618,-1.717,-2.094,-2.151,-2.142,-1.631,-1.446,-1.950,-0.791,-0.388,-0.762,-0.360,-0.006,0.445,1.054,1.055,0.884,0.637,0.305,-0.309,0.193,-0.204,-2.397,0.159,-0.055,-0.198,-0.054,0.101,0.253,0.508,0.746,0.715,0.108,-0.237,-1.628,-0.649,-0.031,1.874,1.066,0.969],l:[0.048,0.186,0.110,-0.191,-0.204,-0.429,-0.142,0.139,-0.160,-0.485,-0.864,-0.766,-0.521,-0.527,-0.564,-0.625,-0.978,-1.341,-1.808,-2.046,-1.870,-2.050,-2.181,-3.364,-4.257,-3.497,-3.953,-2.873,-2.798,-2.285,-1.579,-1.270,-1.241,-1.471,-1.888,-1.616,-1.185,-1.104,-0.994,-1.184,-1.507,-1.552,-1.525,-0.999,-0.875,-1.381,-0.545,-0.185,-0.430,-0.171,-0.039,0.119,0.432,0.442,0.372,0.260,0.073,-0.173,0.328,0.098,-1.850,-0.292,-0.419,-0.480,-0.357,-0.273,-0.194,-0.040,0.107,0.068,-0.107,-0.303,-1.069,-0.128,0.105,1.136,0.913,0.700],s:[-0.077,-0.015,-0.125,-0.354,-0.216,-0.267,-0.066,0.344,0.202,-0.453,-0.739,-0.771,-0.683,-0.621,-0.632,-0.676,-0.944,-1.127,-1.102,-1.393,-1.455,-1.412,-1.442,-1.662,-1.933,-2.026,-2.240,-1.942,-1.825,-1.640,-1.389,-1.197,-1.139,-1.191,-1.091,-0.880,-0.897,-0.837,-0.624,-0.533,-0.586,-0.600,-0.617,-0.632,-0.572,-0.570,-0.246,-0.203,-0.332,-0.189,0.033,0.326,0.622,0.613,0.512,0.376,0.232,-0.137,-0.135,-0.302,-0.547,0.450,0.363,0.282,0.303,0.374,0.447,0.548,0.639,0.647,0.215,0.066,-0.559,-0.521,-0.135,0.739,0.153,0.269],p:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]},
