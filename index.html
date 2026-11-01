@@ -38,7 +38,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </style></head><body>
 <h1>Is the air over the C&eacute;vennes getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="reunion.html">R&eacute;union Island</a> &middot; <a href="japan.html">Kanto, Japan</a> &middot; <a href="hongkong.html">Hong Kong</a></div>
-<div class="sub">air state at 01 Nov 19:26, computed 01 Nov 19:50 &middot; 6 stations &middot; 26 min old</div>
+<div class="sub">air state at 01 Nov 19:26, computed 01 Nov 19:50 &middot; 6 stations &middot; 32 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 8 of 48 h</span></div><div class="lab">more stirred up than 63% of the past 8 days at this time of day</div></div>
 <p class="lead">Eight small GPS antennas of the community-run Centipede network, from the C&eacute;vennes to the Mediterranean coast, watch the water vapour above them every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the same time of day over the past 8 days.</p>
 </div><div class="topr"><div id="map"></div>
@@ -154,7 +154,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 var M=[{n:'MTP2',lab:'Montpellier',la:43.6390,lo:3.8640,c:69},
-{n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:90},
+{n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:91},
 {n:'DIA1',lab:'Mauguio',la:43.6100,lo:3.9770,c:56},
 {n:'HOLA',lab:'Hospitalet',la:43.9700,lo:3.2200,c:2},
 {n:'SAUV',lab:'Issirac',la:44.2550,lo:4.4670,c:48},
@@ -216,7 +216,7 @@ x.restore(); function panel(id,key,color,label){var cc=document.getElementById(i
 panel('c2','l','#4338ca','moisture structures live longer (larger 1/\u03bb)');
 panel('c3','s','#d97706','the signal trembles more (larger \u03c3)');
 });
-;(function(){var D={"t": [61345.625000001026, 61345.64583333436, 61345.6666666677, 61345.68750000103, 61345.70833333437, 61345.729166667705, 61345.75000000104, 61345.770833334376], "n": [1.84, 0.7, -0.201, 0.752, 0.142, 0.339, -2.054, -0.245], "q90": 1.667137822489075, "t0": 61343.810243055894, "t1": 61345.810243055894, "now": [61345.78246527789, 0.564]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
+;(function(){var D={"t": [61345.625000001026, 61345.64583333436, 61345.6666666677, 61345.68750000103, 61345.70833333437, 61345.729166667705, 61345.75000000104, 61345.770833334376], "n": [1.84, 0.7, -0.201, 0.752, 0.142, 0.339, -2.054, -0.245], "q90": 1.6623263232181231, "t0": 61343.810243055894, "t1": 61345.810243055894, "now": [61345.78246527789, 0.564]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
 try{var T0=(typeof t0!=='undefined')?t0:D.t0, T1=(typeof t1!=='undefined')?t1:D.t1;
 xx.fillStyle='#334155'; xx.font='600 16px system-ui'; xx.textAlign='left'; xx.fillText('Change over 6 h: index minus its median of the previous 6 h (dashed: 90th percentile at this time of day)',m,18); xx.save(); xx.translate(16,(mt+h-mb)/2); xx.rotate(-Math.PI/2); xx.textAlign='center'; xx.fillStyle='#334155'; xx.font='700 14px system-ui'; xx.fillText('index change',0,0); xx.restore(); xx.textAlign='left';
 if(!D.t.length){xx.fillText('not enough data yet',m,h/2); return;}
