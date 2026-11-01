@@ -38,7 +38,7 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </style></head><body>
 <h1>Is the air over the C&eacute;vennes getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="reunion.html">R&eacute;union Island</a> &middot; <a href="japan.html">Kanto, Japan</a> &middot; <a href="hongkong.html">Hong Kong</a></div>
-<div class="sub">air state at 01 Nov 14:16, computed 01 Nov 14:40 &middot; 6 stations &middot; 26 min old</div>
+<div class="sub">air state at 01 Nov 14:16, computed 01 Nov 14:40 &middot; 6 stations &middot; 30 min old</div>
 <div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 2 of 48 h</span></div><div class="lab">more stirred up than 86% of the past 8 days at this time of day</div></div>
 <p class="lead">Eight small GPS antennas of the community-run Centipede network, from the C&eacute;vennes to the Mediterranean coast, watch the water vapour above them every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the same time of day over the past 8 days.</p>
 </div><div class="topr"><div id="map"></div>
@@ -153,11 +153,11 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </details>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-var M=[{n:'MTP2',lab:'Montpellier',la:43.6390,lo:3.8640,c:93},
+var M=[{n:'MTP2',lab:'Montpellier',la:43.6390,lo:3.8640,c:94},
 {n:'ALES',lab:'Ales',la:44.1250,lo:4.0770,c:89},
 {n:'DIA1',lab:'Mauguio',la:43.6100,lo:3.9770,c:80},
 {n:'HOLA',lab:'Hospitalet',la:43.9700,lo:3.2200,c:93},
-{n:'SAUV',lab:'Issirac',la:44.2550,lo:4.4670,c:38},
+{n:'SAUV',lab:'Issirac',la:44.2550,lo:4.4670,c:37},
 {n:'CUMAS',lab:'St-Jean-de-Maruejol',la:44.2630,lo:4.2870,c:70},
 {n:'AIGL',lab:'Mont Aigoual',la:44.1200,lo:3.5800,c:-1},
 {n:'SLVT',lab:'La Salvetat',la:43.9200,lo:3.2700,c:-1}], S=[{n:'MTP2',t:[61345.49774,61345.50122,61345.50469,61345.50816,61345.51163,61345.51510,61345.51858,61345.52205,61345.52552,61345.52899,61345.53247,61345.53594,61345.53941,61345.54288,61345.54635,61345.54983,61345.55330,61345.55677,61345.56024,61345.56372,61345.56719,61345.57066,61345.57413,61345.57760,61345.58108,61345.58455,61345.58802,61345.59149,61345.59497],v:[0.192,0.073,-0.402,-1.311,-1.393,-0.039,1.194,2.326,2.266,1.904,1.339,1.942,3.005,3.453,3.034,2.724,3.394,4.051,4.287,3.569,2.620,2.760,3.640,4.050,3.408,1.305,-3.427,-1.224,-0.678],l:[0.257,0.174,-0.095,-0.639,-0.693,0.104,0.617,0.935,0.832,0.812,0.640,0.849,1.140,1.227,1.102,0.956,1.292,1.575,1.806,1.591,1.597,1.553,1.959,2.166,1.846,0.867,-1.763,-0.009,0.215],s:[-0.065,-0.101,-0.307,-0.672,-0.701,-0.142,0.577,1.391,1.434,1.092,0.700,1.094,1.865,2.226,1.932,1.768,2.102,2.476,2.481,1.978,1.024,1.207,1.681,1.884,1.562,0.438,-1.664,-1.215,-0.893],p:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1]},
@@ -216,7 +216,7 @@ x.restore(); function panel(id,key,color,label){var cc=document.getElementById(i
 panel('c2','l','#4338ca','moisture structures live longer (larger 1/\u03bb)');
 panel('c3','s','#d97706','the signal trembles more (larger \u03c3)');
 });
-;(function(){var D={"t": [], "n": [], "q90": 1.2907922075548632, "t0": 61343.59496527789, "t1": 61345.59496527789, "now": [61345.56718749989, null]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
+;(function(){var D={"t": [], "n": [], "q90": 1.2934068357217305, "t0": 61343.59496527789, "t1": 61345.59496527789, "now": [61345.56718749989, null]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
 try{var T0=(typeof t0!=='undefined')?t0:D.t0, T1=(typeof t1!=='undefined')?t1:D.t1;
 xx.fillStyle='#334155'; xx.font='600 16px system-ui'; xx.textAlign='left'; xx.fillText('Change over 6 h: index minus its median of the previous 6 h (dashed: 90th percentile at this time of day)',m,18); xx.save(); xx.translate(16,(mt+h-mb)/2); xx.rotate(-Math.PI/2); xx.textAlign='center'; xx.fillStyle='#334155'; xx.font='700 14px system-ui'; xx.fillText('index change',0,0); xx.restore(); xx.textAlign='left';
 if(!D.t.length){xx.fillText('not enough data yet',m,h/2); return;}
