@@ -38,8 +38,8 @@ a{color:#334155;text-decoration-color:#94a3b8;text-underline-offset:3px}
 </style></head><body>
 <h1>Is the air over Hong Kong getting ready for a storm?</h1>
 <div class="sub" style="margin-bottom:6px">See also: <a href="index.html">C&eacute;vennes, France</a> &middot; <a href="reunion.html">R&eacute;union Island</a> &middot; <a href="japan.html">Kanto, Japan</a></div>
-<div class="sub">air state at 01 Nov 16:25, computed 01 Nov 16:48 &middot; 8 stations &middot; 24 min old</div>
-<div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 19 of 48 h</span></div><div class="lab">more stirred up than 55% of the past 8 days at this time of day</div></div>
+<div class="sub">air state at 01 Nov 16:25, computed 01 Nov 16:48 &middot; 8 stations &middot; 27 min old</div>
+<div class="top"><div class="topl"><div class="state"><div class="big"><span style="font-size:34px;color:#64748b">reference still building: 19 of 48 h</span></div><div class="lab">more stirred up than 56% of the past 8 days at this time of day</div></div>
 <p class="lead">Eight GPS antennas of the Hong Kong SatRef network watch the water vapour above them every 5 minutes. Long before a storm, the moist and dry pockets of air stop being random and line up. The GPS signal, which crosses them on its way down, starts to tremble differently. This page shows how organised the air is right now, compared with the same time of day over the past 8 days.</p>
 </div><div class="topr"><div id="map"></div>
 <div class="legend">Each marker is one antenna, coloured by its own percentile at this time of day:<br>
@@ -219,7 +219,7 @@ x.restore(); function panel(id,key,color,label){var cc=document.getElementById(i
 panel('c2','l','#4338ca','moisture structures live longer (larger 1/\u03bb)');
 panel('c3','s','#d97706','the signal trembles more (larger \u03c3)');
 });
-;(function(){var D={"t": [61345.56250000103, 61345.58333333437, 61345.604166667705, 61345.62500000104, 61345.645833334376], "n": [-0.179, -1.819, -1.286, -1.222, -3.612], "q90": 1.477271828100593, "t0": 61343.68420138889, "t1": 61345.68420138889, "now": [61345.65781249989, 0.789]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
+;(function(){var D={"t": [61345.56250000103, 61345.58333333437, 61345.604166667705, 61345.62500000104, 61345.645833334376], "n": [-0.179, -1.819, -1.286, -1.222, -3.612], "q90": 1.5055376743986568, "t0": 61343.68420138889, "t1": 61345.68420138889, "now": [61345.65781249989, 0.789]}; var cc=document.getElementById('c4'); if(!cc) return; var xx=cc.getContext('2d'), w=cc.width, h=cc.height, m=64, mt=30, mb=28;
 try{var T0=(typeof t0!=='undefined')?t0:D.t0, T1=(typeof t1!=='undefined')?t1:D.t1;
 xx.fillStyle='#334155'; xx.font='600 16px system-ui'; xx.textAlign='left'; xx.fillText('Change over 6 h: index minus its median of the previous 6 h (dashed: 90th percentile at this time of day)',m,18); xx.save(); xx.translate(16,(mt+h-mb)/2); xx.rotate(-Math.PI/2); xx.textAlign='center'; xx.fillStyle='#334155'; xx.font='700 14px system-ui'; xx.fillText('index change',0,0); xx.restore(); xx.textAlign='left';
 if(!D.t.length){xx.fillText('not enough data yet',m,h/2); return;}
